@@ -1,5 +1,5 @@
 
-import { Award, GraduationCap, Certificate, BookOpen } from "lucide-react";
+import { Award, GraduationCap, BookOpen, BadgeCheck } from "lucide-react";
 
 const ACHIEVEMENTS = [
   {
@@ -12,7 +12,7 @@ const ACHIEVEMENTS = [
     year: 2022,
     title: "Sertifikasi CompTIA Network+",
     desc: "Memperoleh sertifikasi internasional CompTIA Network+ di bidang jaringan.",
-    icon: <Certificate className="w-7 h-7 text-yellow-400" />,
+    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
   },
   {
     year: 2021,
