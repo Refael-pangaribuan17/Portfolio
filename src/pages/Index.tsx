@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { 
   Navbar,
@@ -8,6 +7,7 @@ import {
   ContactSection,
   Footer 
 } from "@/components";
+import { PrestasiAkademikSection } from "@/components/PrestasiAkademikSection";
 
 const Index = () => {
   // Set dark mode by default when component mounts
@@ -21,6 +21,7 @@ const Index = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <PrestasiAkademikSection />
         <ProjectsSection />
         <ContactSection />
       </main>
