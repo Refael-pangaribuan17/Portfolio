@@ -1,6 +1,6 @@
-
 import { ArrowDown, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { TypingAnimation } from "./TypingAnimation";
 
 export function HeroSection() {
   return (
@@ -18,7 +18,9 @@ export function HeroSection() {
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16">
           {/* Left Content */}
           <div className="w-full lg:w-3/5 animate-fade-in">
-            <h2 className="text-2xl md:text-3xl font-medium text-primary mb-2">Tech enthusiast</h2>
+            <h2 className="text-2xl md:text-3xl font-medium text-primary mb-2">
+              <TypingAnimation />
+            </h2>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight">
               Hi, I&apos;m <span className="text-primary">Refael</span> Pangaribuan
             </h1>
