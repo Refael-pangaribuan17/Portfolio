@@ -74,15 +74,15 @@ export function AboutSection() {
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
                 {[
-                  "Full Stack Development",
-                  "React & Node.js",
-                  "Database Design",
-                  "Web Security",
-                  "RESTful APIs",
-                  "Cloud Services",
-                  "Responsive Design",
-                  "Version Control",
-                  "Agile Development"
+                  "Wordpress",
+                  "Machine Learning",
+                  "Database",
+                  "Internet of Things",
+                  "Laravel",
+                  "Cloud Computing",
+                  "Networking",
+                  "Programing and Scripting",
+                  "Containerization"
                 ].map((skill, index) => (
                   <div key={index} className="flex items-center gap-3 group">
                     <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform duration-300" />
