@@ -108,7 +108,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">Email</h4>
-                  <p className="text-foreground/70">contact@refael.dev</p>
+                  <p className="text-foreground/70">refaelpangaribuan123@gmal.com</p>
                 </div>
               </a>
               
@@ -123,7 +123,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">GitHub</h4>
-                  <p className="text-foreground/70">github.com/refael</p>
+                  <p className="text-foreground/70">github.com/Refael-pangaribuan17</p>
                 </div>
               </a>
               
@@ -138,7 +138,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">LinkedIn</h4>
-                  <p className="text-foreground/70">linkedin.com/in/refael</p>
+                  <p className="text-foreground/70">www.linkedin.com/in/refael-pangaribuan-257a06272</p>
                 </div>
               </a>
             </div>
