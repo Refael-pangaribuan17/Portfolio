@@ -61,7 +61,7 @@ export function AboutSection() {
           <div className="w-full lg:w-3/5 animate-fade-in">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-                I'm Refael Pangaribuan, a Technology & Web Development Enthusiast
+                I'm Refael Pangaribuan, a Technology Enthusiast
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
                 I am a student of Computer Technology at the D3 level with a strong interest in digital technology, particularly in networking, cybersecurity, Internet of Things (IoT), and industrial automation. 
