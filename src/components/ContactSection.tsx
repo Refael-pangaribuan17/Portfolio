@@ -128,7 +128,7 @@ export function ContactSection() {
               </a>
               
               <a 
-                href="www.linkedin.com/in/refael-pangaribuan-257a06272"
+                href="https://www.linkedin.com/in/refael-pangaribuan-257a06272/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-300"
