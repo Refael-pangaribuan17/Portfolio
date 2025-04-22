@@ -1,34 +1,46 @@
-
-import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy } from "lucide-react";
+import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code, Terminal, Monitor } from "lucide-react";
 import { Card } from "./ui/card";
 
 const ACADEMIC = {
   degree: "D3 Teknologi Komputer",
   institution: "Institut Teknologi Del",
   year: "2025 (On Going)",
-  description: "Fokus pada pengembangan keterampilan praktis dalam bidang teknologi komputer dan jaringan.",
-  courses: ["Jaringan Komputer", "Cloud Computing", "Cyber Security", "Database Management"],
+  description: "Fokus pada pengembangan keterampilan praktis dalam bidang teknologi komputer, jaringan, dan pengembangan web.",
+  courses: [
+    "Pemrograman Web",
+    "Database Management", 
+    "Jaringan Komputer",
+    "Cloud Computing",
+    "Cyber Security",
+    "Full Stack Development"
+  ],
   icon: <GraduationCap className="w-10 h-10 text-yellow-400" />,
 };
 
 const INTERNSHIPS = [
   {
     year: 2024,
-    position: "Network Engineer Intern",
+    position: "Full Stack Developer Intern",
     company: "PT Telekomunikasi Indonesia",
-    desc: "Membantu dalam perancangan dan monitoring jaringan perusahaan serta troubleshooting issue jaringan.",
-    icon: <Briefcase className="w-6 h-6 text-yellow-400" />,
+    desc: "Pengembangan aplikasi web menggunakan React dan Node.js, serta membantu dalam perancangan dan monitoring jaringan perusahaan.",
+    icon: <Code className="w-6 h-6 text-yellow-400" />,
   },
   {
     year: 2023,
-    position: "Cloud Infrastructure Intern",
+    position: "Cloud & Web Infrastructure Intern",
     company: "Amazon Web Services (AWS) Indonesia",
-    desc: "Berpartisipasi dalam migrasi aplikasi ke AWS dan optimasi layanan cloud.",
-    icon: <Briefcase className="w-6 h-6 text-yellow-400" />,
+    desc: "Berpartisipasi dalam pengembangan aplikasi web berbasis cloud dan optimasi layanan AWS.",
+    icon: <Terminal className="w-6 h-6 text-yellow-400" />,
   }
 ];
 
 const ACHIEVEMENTS = [
+  {
+    year: 2024,
+    title: "Best Web Developer Award",
+    desc: "Penghargaan untuk pengembangan aplikasi web inovatif dalam kompetisi tingkat nasional.",
+    icon: <Monitor className="w-7 h-7 text-yellow-400" />,
+  },
   {
     year: 2023,
     title: "Juara 2 Network Design Competition",
@@ -36,17 +48,17 @@ const ACHIEVEMENTS = [
     icon: <Award className="w-7 h-7 text-yellow-400" />,
   },
   {
+    year: 2023,
+    title: "Full Stack Development Certification",
+    desc: "Sertifikasi profesional dalam pengembangan aplikasi web full stack.",
+    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
+  },
+  {
     year: 2022,
     title: "Sertifikasi CompTIA Network+",
     desc: "Memperoleh sertifikasi internasional CompTIA Network+ di bidang jaringan.",
     icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
-  },
-  {
-    year: 2021,
-    title: "Finalis Cyber Security CTF",
-    desc: "Masuk finalis lomba Capture The Flag tingkat universitas.",
-    icon: <Award className="w-7 h-7 text-yellow-400" />,
-  },
+  }
 ];
 
 export function PrestasiAkademikSection() {
