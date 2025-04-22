@@ -50,7 +50,7 @@ export function Navbar() {
           className="text-2xl font-bold text-foreground"
           onClick={() => handleNavClick("home")}
         >
-          <span className="text-primary">Refael</span>.
+          <span className="text-primary">Portfolio</span>.
         </a>
 
         {/* Desktop Navigation */}
