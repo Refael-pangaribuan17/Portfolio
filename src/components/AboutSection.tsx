@@ -1,6 +1,7 @@
 
 import { Cloud, Shield, Cpu } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { AspectRatio } from "./ui/aspect-ratio";
 
 type SkillCardProps = {
   icon: React.ReactNode;
@@ -41,23 +42,23 @@ export function AboutSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center gap-16 mb-20">
-          {/* Enhanced Image Container */}
+          {/* Enhanced Image Container with New Image */}
           <div className="w-full lg:w-2/5 animate-fade-in">
             <div className="relative group">
               <div className="relative rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
-                <div className="aspect-w-4 aspect-h-5">
+                <AspectRatio ratio={4/5} className="bg-muted">
                   <img 
-                    src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80" 
-                    alt="Technology" 
-                    className="w-full h-full object-cover"
+                    src="/public/lovable-uploads/6349ba89-b06f-4097-bb92-e425be59dc49.png"
+                    alt="Portrait" 
+                    className="w-full h-full object-cover object-center brightness-105 contrast-105"
                   />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-secondary/20 opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+                </AspectRatio>
               </div>
-              {/* Decorative Elements */}
-              <div className="absolute -z-10 inset-0 blur-3xl bg-gradient-to-tr from-primary/10 to-secondary/10 opacity-70 scale-110" />
-              <div className="absolute top-4 -right-4 w-24 h-24 bg-primary/10 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/10 rounded-full blur-2xl animate-pulse delay-300" />
+              {/* Enhanced Decorative Elements */}
+              <div className="absolute -z-10 inset-0 blur-3xl bg-gradient-to-tr from-primary/20 to-secondary/20 opacity-70 scale-110" />
+              <div className="absolute top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-2xl animate-pulse delay-300" />
             </div>
           </div>
 
@@ -94,7 +95,7 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Enhanced Skills Section */}
+        {/* Skills Section with Enhanced Cards */}
         <div className="mt-24">
           <div className="text-center mb-16">
             <h2 className="text-xl text-primary font-medium mb-3">My Expertise</h2>
