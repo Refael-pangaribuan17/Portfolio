@@ -64,7 +64,13 @@ export function AboutSection() {
                 I'm Refael Pangaribuan, a Technology & Web Development Enthusiast
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I am a student of Computer Technology at the D3 level with a strong interest in digital technology, particularly in networking, cybersecurity, Internet of Things (IoT), and industrial automation. Throughout my studies, I have actively developed skills in various fields, from modern web application development to the integration of IoT systems and machine vision. I have experience using technologies like React and Node.js to build responsive web applications, along with knowledge in database management and cloud services. In the IoT space, I am passionate about designing real-time monitoring and control systems with a focus on efficiency and scalability. Additionally, I have studied the fundamentals of cybersecurity to ensure that every solution developed remains secure and reliable. In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era..
+                I am a student of Computer Technology at the D3 level with a strong interest in digital technology, particularly in networking, cybersecurity, Internet of Things (IoT), and industrial automation. 
+                
+                Throughout my studies, I have actively developed skills in various fields, from modern web application development to the integration of IoT systems and machine vision. I have experience using technologies like React and Node.js to build responsive web applications, along with knowledge in database management and cloud services. 
+                
+                In the IoT space, I am passionate about designing real-time monitoring and control systems with a focus on efficiency and scalability. Additionally, I have studied the fundamentals of cybersecurity to ensure that every solution developed remains secure and reliable. 
+                
+                In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era..
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
                 {[
