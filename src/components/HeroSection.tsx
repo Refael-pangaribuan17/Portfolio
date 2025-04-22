@@ -42,19 +42,6 @@ export function HeroSection() {
                 <ArrowDown className="w-5 h-5" />
                 Download CV
               </a>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={cn(
-                  "flex items-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300",
-                  "bg-secondary/80 text-secondary-foreground hover:bg-secondary/70 transform hover:-translate-y-1 hover:shadow-lg",
-                  "backdrop-blur-sm border border-secondary-foreground/10"
-                )}
-              >
-                <Github className="w-5 h-5" />
-                View GitHub
-              </a>
             </div>
           </div>
 
