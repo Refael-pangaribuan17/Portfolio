@@ -7,12 +7,12 @@ const ACADEMIC = {
   year: "2025 (On Going)",
   description: "Fokus pada pengembangan keterampilan praktis dalam bidang teknologi komputer, jaringan, dan pengembangan web.",
   courses: [
-    "Pemrograman Web",
-    "Database Management", 
-    "Jaringan Komputer",
-    "Cloud Computing",
-    "Cyber Security",
-    "Full Stack Development"
+    "Web Development",
+    "Database Managemen", 
+    "Computer Network",
+    "Embedded System",
+    "Internetworking",
+    "Network System Software"
   ],
   icon: <GraduationCap className="w-10 h-10 text-yellow-400" />,
 };
