@@ -27,7 +27,7 @@ export function HeroSection() {
               Hi, I&apos;m <span className="text-primary">Refael</span> Pangaribuan
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl leading-relaxed">
-              Tech enthusiast specializing in network and security systems with a passion for IoT, cloud, and virtualization.
+              Tech enthusiast specializing in network, cyber security, IoT, cloud, web development, machine vision and virtualization.
             </p>
             <div className="flex flex-wrap gap-6">
               <a 
