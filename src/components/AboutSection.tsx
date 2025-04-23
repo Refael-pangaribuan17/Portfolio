@@ -1,17 +1,16 @@
-
-import { c, "c-sharp", python, javascript, html, css, php } from "lucide-react";
+import { C, CSharp, Python, Javascript, Html, Css, PhP } from "lucide-react";
 import { Code, Monitor, Terminal, Cloud, Laptop } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 // Language icon list
 const LANGUAGES = [
-  { label: "C", icon: c },
-  { label: "C#", icon: "c-sharp" },
-  { label: "Python", icon: python },
-  { label: "JavaScript", icon: javascript },
-  { label: "HTML", icon: html },
-  { label: "CSS", icon: css },
-  { label: "PHP", icon: php },
+  { label: "C", icon: C },
+  { label: "C#", icon: CSharp },
+  { label: "Python", icon: Python },
+  { label: "JavaScript", icon: Javascript },
+  { label: "HTML", icon: Html },
+  { label: "CSS", icon: Css },
+  { label: "PHP", icon: PhP },
 ];
 
 function LanguageIconRow() {
