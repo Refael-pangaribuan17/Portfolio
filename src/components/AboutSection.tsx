@@ -1,32 +1,54 @@
 
-import { Code, Cloud, Network, Shield, Cpu, Monitor, Database, GitBranch } from "lucide-react";
+import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
+import { Hash, FileCode, Database, GitBranch, Server, Terminal, Globe, Laptop, Lock, FileBadge } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
-// Simple data for tools/languages (all yellow style)
+type SkillCardProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
+
+// Simple data for icon tools/languages (using available lucide-react icons)
 const tools = [
-  { name: "C/C++", icon: <Code size={20} />, },
-  { name: "CSS", icon: <Code size={20} />, },
-  { name: "HTML", icon: <Code size={20} />, },
-  { name: "Java", icon: <Code size={20} />, },
-  { name: "PHP", icon: <Code size={20} />, },
-  { name: "Python", icon: <Code size={20} />, },
-  { name: "Git", icon: <GitBranch size={20} />, },
-  { name: "Github", icon: <GitBranch size={20} />, },
-  { name: "MySQL", icon: <Database size={20} />, },
-  { name: "MongoDB", icon: <Database size={20} />, },
-  { name: "Laravel", icon: <Cloud size={20} />, },
-  { name: "Bootstrap", icon: <Cloud size={20} />, }
+  { name: "C/C++", icon: <FileCode size={20} color="#154484" />, color: "bg-[#154484] text-white" },
+  { name: "CSS", icon: <Code size={20} color="#00A6EA" />, color: "bg-[#254bdd] text-white" },
+  { name: "HTML", icon: <Code size={20} color="#DE4C25" />, color: "bg-[#e34c26] text-white" },
+  { name: "Java", icon: <Code size={20} color="#FFD43B" />, color: "bg-[#f2b143] text-black" },
+  { name: "PHP", icon: <Code size={20} color="#858EBB" />, color: "bg-[#8993be] text-white" },
+  { name: "Python", icon: <Code size={20} color="#f7e018" />, color: "bg-[#f7e018] text-black" },
+  { name: "Bootstrap", icon: <Globe size={20} color="#7911F6" />, color: "bg-[#7633f9] text-white" },
+  { name: "Laravel", icon: <Server size={20} color="#F05340" />, color: "bg-[#f55243] text-white" },
+  { name: "Nginx", icon: <Server size={20} color="#119B4C" />, color: "bg-[#009639] text-white" },
+  { name: "Apache", icon: <Server size={20} color="#CC2139" />, color: "bg-[#d22128] text-white" },
+  { name: "MySQL", icon: <Database size={20} color="#005C83" />, color: "bg-[#00758f] text-white" },
+  { name: "MariaDB", icon: <Database size={20} color="#00698F" />, color: "bg-[#003545] text-white" },
+  { name: "MongoDB", icon: <Database size={20} color="#4DB33D" />, color: "bg-[#4DB33D] text-white" },
+  { name: "Canva", icon: <Globe size={20} color="#00C4CC" />, color: "bg-[#00C4CC] text-white" },
+  { name: "Figma", icon: <Globe size={20} color="#a259ff" />, color: "bg-[#a259ff] text-white" },
+  { name: "Git", icon: <GitBranch size={20} color="#F05032" />, color: "bg-[#f34f29] text-white" },
+  { name: "Github", icon: <GitBranch size={20} color="#24292F" />, color: "bg-[#24292F] text-white" },
+  { name: "Arduino", icon: <Cpu size={20} color="#00979C" />, color: "bg-[#00979C] text-white" },
+  { name: "Ansible", icon: <Terminal size={20} color="#222222" />, color: "bg-[#222222] text-white" },
+  { name: "Cisco", icon: <Network size={20} color="#0397d6" />, color: "bg-[#1b63b2] text-white" },
+  { name: "Kubernetes", icon: <Server size={20} color="#326de6" />, color: "bg-[#326de6] text-white" },
+  { name: "Postman", icon: <Globe size={20} color="#fd6c35" />, color: "bg-[#fd6c35] text-white" },
 ];
 
-// All tech skills in English, style & layout per screenshot
-const techSkills = [
-  { icon: <Code size={24} />, name: "Web Development" },
-  { icon: <Cloud size={24} />, name: "Cloud" },
-  { icon: <Network size={24} />, name: "Networking" },
-  { icon: <Shield size={24} />, name: "Cyber Security" },
-  { icon: <Cpu size={24} />, name: "Machine Vision" },
-  { icon: <Monitor size={24} />, name: "IoT & Automation" }
-];
+function SkillCard({ icon, title, description }: SkillCardProps) {
+  return (
+    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/30 via-secondary/20 to-background/30 backdrop-blur-sm p-6 transition-all duration-500 hover:transform hover:-translate-y-2">
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative z-10">
+        <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center text-primary mb-5 transform transition-transform duration-500 group-hover:scale-110">
+          {icon}
+        </div>
+        <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{title}</h3>
+        <p className="text-foreground/80 text-sm leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+}
 
 export function AboutSection() {
   return (
@@ -74,49 +96,79 @@ export function AboutSection() {
                 
                 In the IoT space, I am passionate about designing real-time monitoring and control systems with a focus on efficiency and scalability. Additionally, I have studied the fundamentals of cybersecurity to ensure that every solution developed remains secure and reliable. 
                 
-                In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era.
+                In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era..
               </p>
-              
-              {/* Tools & Languages Title */}
-              <div className="mt-8 mb-4">
-                <h4 className="text-2xl font-semibold text-primary mb-2 border-b-2 border-primary inline-block pb-1">
-                  Tools &amp; Languages
-                </h4>
+              {/* Technical Skills */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
+                {[
+                  { icon: <Code size={20} />, skill: "Web Development" },
+                  { icon: <Cloud size={20} />, skill: "Cloud" },
+                  { icon: <Network size={20} />, skill: "Networking" },
+                  { icon: <Shield size={20} />, skill: "Cyber Security" },
+                  { icon: <Cpu size={20} />, skill: "Machine Vision" },
+                  { icon: <Monitor size={20} />, skill: "IoT & Automation" },
+                ].map(({ icon, skill }, idx) => (
+                  <div key={idx} className="flex items-center gap-3 group">
+                    <span className="w-7 h-7 flex items-center justify-center bg-primary/10 rounded-md">
+                      {icon}
+                    </span>
+                    <span className="text-foreground/80 group-hover:text-primary transition-colors duration-300 text-sm font-medium">{skill}</span>
+                  </div>
+                ))}
               </div>
-              
-              {/* Tools/Languages badges */}
-              <div className="flex flex-wrap gap-3 mt-2">
+              {/* Tools row */}
+              <div className="flex flex-wrap gap-2 mt-8">
                 {tools.map((t) => (
-                  <span 
-                    key={t.name} 
-                    className="flex items-center gap-1 rounded-md px-3 py-1 text-sm font-medium bg-yellow-400 text-black/90 shadow-sm transition-all duration-300 hover:scale-105 hover:bg-yellow-300 cursor-pointer"
-                  >
+                  <span key={t.name} className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${t.color}`}>
                     {t.icon}
                     {t.name}
                   </span>
                 ))}
               </div>
-              
-              {/* Technical Skills grid */}
-              <div className="mt-8">
-                <h4 className="text-2xl font-semibold text-primary mb-4 border-b-2 border-primary inline-block pb-1">
-                  Technical Skills
-                </h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
-                  {techSkills.map(({ icon, name }, idx) => (
-                    <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-background/70 border border-primary/20 shadow transition hover:-translate-y-1 hover:shadow-lg duration-300 animate-fade-in">
-                      <span className="w-9 h-9 flex items-center justify-center bg-yellow-400/80 text-black rounded-md">
-                        {icon}
-                      </span>
-                      <span className="text-base text-foreground font-semibold">{name}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        {/* The previous 'My Expertise' big section is deleted as requested */}
+
+        <div className="mt-24">
+          <div className="text-center mb-16">
+            <h2 className="text-xl text-primary font-medium mb-3">My Expertise</h2>
+            <h3 className="text-4xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
+              Technical Skills
+            </h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <SkillCard 
+              icon={<Code size={28} />}
+              title="Web Development"
+              description="Full stack web development (React, Node.js, REST APIs, responsive design)."
+            />
+            <SkillCard 
+              icon={<Cloud size={28} />}
+              title="Cloud"
+              description="Cloud infrastructure, deployment, and automation (AWS, Nginx, Docker)."
+            />
+            <SkillCard 
+              icon={<Network size={28} />}
+              title="Networking"
+              description="Jaringan komputer modern, konfigurasi LAN/WAN, protokol, Cisco."
+            />
+            <SkillCard 
+              icon={<Shield size={28} />}
+              title="Cyber Security"
+              description="Network/web security, vulnerabilities, securing infrastructure."
+            />
+            <SkillCard 
+              icon={<Cpu size={28} />}
+              title="Machine Vision"
+              description="Vision system, image analysis, automation for quality control."
+            />
+            <SkillCard 
+              icon={<Monitor size={28} />}
+              title="IoT & Automation"
+              description="IoT integration, device networking, smart automation systems."
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
