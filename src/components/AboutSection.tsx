@@ -1,16 +1,16 @@
-import { C, CSharp, Python, Javascript, Html, Css, PhP } from "lucide-react";
-import { Code, Monitor, Terminal, Cloud, Laptop } from "lucide-react";
+
+import { Code, Hash, FileCode, Brackets, Terminal, Cloud, Laptop } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 // Language icon list
 const LANGUAGES = [
-  { label: "C", icon: C },
-  { label: "C#", icon: CSharp },
-  { label: "Python", icon: Python },
-  { label: "JavaScript", icon: Javascript },
-  { label: "HTML", icon: Html },
-  { label: "CSS", icon: Css },
-  { label: "PHP", icon: PhP },
+  { label: "C", icon: Code },
+  { label: "C#", icon: Hash },
+  { label: "Python", icon: FileCode },
+  { label: "JavaScript", icon: Brackets },
+  { label: "HTML", icon: Code },
+  { label: "CSS", icon: Code },
+  { label: "PHP", icon: Code },
 ];
 
 function LanguageIconRow() {
@@ -92,7 +92,7 @@ export function AboutSection() {
                 ]}
               />
               <SkillFocusCard
-                icon={<Monitor size={20} />}
+                icon={<Terminal size={20} />}
                 title="Backend & APIs"
                 skills={[
                   "Node.js, Express",
