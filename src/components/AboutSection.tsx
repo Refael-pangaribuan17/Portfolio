@@ -98,24 +98,7 @@ export function AboutSection() {
                 
                 In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era..
               </p>
-              {/* Technical Skills */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10">
-                {[
-                  { icon: <Code size={20} />, skill: "Web Development" },
-                  { icon: <Cloud size={20} />, skill: "Cloud" },
-                  { icon: <Network size={20} />, skill: "Networking" },
-                  { icon: <Shield size={20} />, skill: "Cyber Security" },
-                  { icon: <Cpu size={20} />, skill: "Machine Vision" },
-                  { icon: <Monitor size={20} />, skill: "IoT & Automation" },
-                ].map(({ icon, skill }, idx) => (
-                  <div key={idx} className="flex items-center gap-3 group">
-                    <span className="w-7 h-7 flex items-center justify-center bg-primary/10 rounded-md">
-                      {icon}
-                    </span>
-                    <span className="text-foreground/80 group-hover:text-primary transition-colors duration-300 text-sm font-medium">{skill}</span>
-                  </div>
-                ))}
-              </div>
+            
               {/* Tools row */}
               <div className="flex flex-wrap gap-2 mt-8">
                 {tools.map((t) => (
