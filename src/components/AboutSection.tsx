@@ -1,9 +1,6 @@
 
-import { Cloud, Network, Shield, Machine, Code, Monitor } from "lucide-react";
-import {
-  Css3, Html5, Java, Php, Python, Bootstrap, Laravel, Nginx, Apache, Mysql, MariaDB, Mongodb,
-  Canva, Figma, Git, Github, Arduino, Ansible, Cisco, Kubernetes, Postman, C
-} from "lucide-react";
+import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
+import { Hash, FileCode, Database, GitBranch, Server, Terminal, Globe, Laptop, Lock, FileBadge } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
 type SkillCardProps = {
@@ -12,30 +9,30 @@ type SkillCardProps = {
   description: string;
 };
 
-// Simple data for icon tools/languages (those included in lucide-react only)
+// Simple data for icon tools/languages (using available lucide-react icons)
 const tools = [
-  { name: "C", icon: <C size={20} color="#154484" />, color: "bg-[#154484] text-white" },
-  { name: "css3", icon: <Css3 size={20} color="#00A6EA" />, color: "bg-[#254bdd] text-white" },
-  { name: "html5", icon: <Html5 size={20} color="#DE4C25" />, color: "bg-[#e34c26] text-white" },
-  { name: "java", icon: <Java size={20} color="#FFD43B" />, color: "bg-[#f2b143] text-black" },
-  { name: "php", icon: <Php size={20} color="#858EBB" />, color: "bg-[#8993be] text-white" },
-  { name: "python", icon: <Python size={20} color="#f7e018" />, color: "bg-[#f7e018] text-black" },
-  { name: "bootstrap", icon: <Bootstrap size={20} color="#7911F6" />, color: "bg-[#7633f9] text-white" },
-  { name: "laravel", icon: <Laravel size={20} color="#F05340" />, color: "bg-[#f55243] text-white" },
-  { name: "nginx", icon: <Nginx size={20} color="#119B4C" />, color: "bg-[#009639] text-white" },
-  { name: "apache", icon: <Apache size={20} color="#CC2139" />, color: "bg-[#d22128] text-white" },
-  { name: "mysql", icon: <Mysql size={20} color="#005C83" />, color: "bg-[#00758f] text-white" },
-  { name: "MariaDB", icon: <MariaDB size={20} color="#00698F" />, color: "bg-[#003545] text-white" },
-  { name: "MongoDB", icon: <Mongodb size={20} color="#4DB33D" />, color: "bg-[#4DB33D] text-white" },
-  { name: "Canva", icon: <Canva size={20} color="#00C4CC" />, color: "bg-[#00C4CC] text-white" },
-  { name: "Figma", icon: <Figma size={20} color="#a259ff" />, color: "bg-[#a259ff] text-white" },
-  { name: "Git", icon: <Git size={20} color="#F05032" />, color: "bg-[#f34f29] text-white" },
-  { name: "Github", icon: <Github size={20} color="#24292F" />, color: "bg-[#24292F] text-white" },
-  { name: "Arduino", icon: <Arduino size={20} color="#00979C" />, color: "bg-[#00979C] text-white" },
-  { name: "Ansible", icon: <Ansible size={20} color="#222222" />, color: "bg-[#222222] text-white" },
-  { name: "Cisco", icon: <Cisco size={20} color="#0397d6" />, color: "bg-[#1b63b2] text-white" },
-  { name: "Kubernetes", icon: <Kubernetes size={20} color="#326de6" />, color: "bg-[#326de6] text-white" },
-  { name: "Postman", icon: <Postman size={20} color="#fd6c35" />, color: "bg-[#fd6c35] text-white" },
+  { name: "C/C++", icon: <FileCode size={20} color="#154484" />, color: "bg-[#154484] text-white" },
+  { name: "CSS", icon: <Code size={20} color="#00A6EA" />, color: "bg-[#254bdd] text-white" },
+  { name: "HTML", icon: <Code size={20} color="#DE4C25" />, color: "bg-[#e34c26] text-white" },
+  { name: "Java", icon: <Code size={20} color="#FFD43B" />, color: "bg-[#f2b143] text-black" },
+  { name: "PHP", icon: <Code size={20} color="#858EBB" />, color: "bg-[#8993be] text-white" },
+  { name: "Python", icon: <Code size={20} color="#f7e018" />, color: "bg-[#f7e018] text-black" },
+  { name: "Bootstrap", icon: <Globe size={20} color="#7911F6" />, color: "bg-[#7633f9] text-white" },
+  { name: "Laravel", icon: <Server size={20} color="#F05340" />, color: "bg-[#f55243] text-white" },
+  { name: "Nginx", icon: <Server size={20} color="#119B4C" />, color: "bg-[#009639] text-white" },
+  { name: "Apache", icon: <Server size={20} color="#CC2139" />, color: "bg-[#d22128] text-white" },
+  { name: "MySQL", icon: <Database size={20} color="#005C83" />, color: "bg-[#00758f] text-white" },
+  { name: "MariaDB", icon: <Database size={20} color="#00698F" />, color: "bg-[#003545] text-white" },
+  { name: "MongoDB", icon: <Database size={20} color="#4DB33D" />, color: "bg-[#4DB33D] text-white" },
+  { name: "Canva", icon: <Globe size={20} color="#00C4CC" />, color: "bg-[#00C4CC] text-white" },
+  { name: "Figma", icon: <Globe size={20} color="#a259ff" />, color: "bg-[#a259ff] text-white" },
+  { name: "Git", icon: <GitBranch size={20} color="#F05032" />, color: "bg-[#f34f29] text-white" },
+  { name: "Github", icon: <GitBranch size={20} color="#24292F" />, color: "bg-[#24292F] text-white" },
+  { name: "Arduino", icon: <Cpu size={20} color="#00979C" />, color: "bg-[#00979C] text-white" },
+  { name: "Ansible", icon: <Terminal size={20} color="#222222" />, color: "bg-[#222222] text-white" },
+  { name: "Cisco", icon: <Network size={20} color="#0397d6" />, color: "bg-[#1b63b2] text-white" },
+  { name: "Kubernetes", icon: <Server size={20} color="#326de6" />, color: "bg-[#326de6] text-white" },
+  { name: "Postman", icon: <Globe size={20} color="#fd6c35" />, color: "bg-[#fd6c35] text-white" },
 ];
 
 function SkillCard({ icon, title, description }: SkillCardProps) {
@@ -108,7 +105,7 @@ export function AboutSection() {
                   { icon: <Cloud size={20} />, skill: "Cloud" },
                   { icon: <Network size={20} />, skill: "Networking" },
                   { icon: <Shield size={20} />, skill: "Cyber Security" },
-                  { icon: <Machine size={20} />, skill: "Machine Vision" },
+                  { icon: <Cpu size={20} />, skill: "Machine Vision" },
                   { icon: <Monitor size={20} />, skill: "IoT & Automation" },
                 ].map(({ icon, skill }, idx) => (
                   <div key={idx} className="flex items-center gap-3 group">
@@ -161,7 +158,7 @@ export function AboutSection() {
               description="Network/web security, vulnerabilities, securing infrastructure."
             />
             <SkillCard 
-              icon={<Machine size={28} />}
+              icon={<Cpu size={28} />}
               title="Machine Vision"
               description="Vision system, image analysis, automation for quality control."
             />
