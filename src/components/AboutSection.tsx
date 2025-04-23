@@ -1,9 +1,41 @@
 
-import { Code, Cloud, Shield, Terminal, Database, Award, Laptop, Monitor, Globe } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { c, "c-sharp", python, javascript, html, css, php } from "lucide-react";
+import { Code, Monitor, Terminal, Cloud, Laptop } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
 
-// Focused skill category cards
+// Language icon list
+const LANGUAGES = [
+  { label: "C", icon: c },
+  { label: "C#", icon: "c-sharp" },
+  { label: "Python", icon: python },
+  { label: "JavaScript", icon: javascript },
+  { label: "HTML", icon: html },
+  { label: "CSS", icon: css },
+  { label: "PHP", icon: php },
+];
+
+function LanguageIconRow() {
+  return (
+    <div className="flex flex-wrap gap-5 mb-8 animate-fade-in">
+      {LANGUAGES.map(lang => {
+        // Handle both string and function icon cases for lucide-react icons
+        const LucideIcon = typeof lang.icon === "string"
+          ? require("lucide-react")[lang.icon.charAt(0).toUpperCase() + lang.icon.slice(1)]
+          : lang.icon;
+        return (
+          <div key={lang.label} className="flex flex-col items-center justify-center">
+            <span className="bg-gradient-to-br from-primary/50 to-secondary/40 rounded-full p-2 mb-1">
+              <LucideIcon size={30} className="text-primary" />
+            </span>
+            <span className="text-xs font-medium text-foreground/70">{lang.label}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// Technical skill focus card
 type SkillCardProps = {
   icon: React.ReactNode;
   title: string;
@@ -12,13 +44,13 @@ type SkillCardProps = {
 
 function SkillFocusCard({ icon, title, skills }: SkillCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/20 via-secondary/10 to-background/30 backdrop-blur-lg p-6 transition-all duration-500 hover:transform hover:-translate-y-1 shadow-xl border border-secondary/20">
+    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/20 via-secondary/10 to-background/30 backdrop-blur-lg p-5 transition-all duration-500 hover:scale-105 shadow-xl border border-secondary/20">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className="relative z-10">
-        <div className="w-12 h-12 bg-gradient-to-br from-primary/40 to-secondary/15 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform shadow-md">
+        <div className="w-10 h-10 bg-gradient-to-br from-primary/40 to-secondary/15 rounded-lg flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform shadow-md">
           {icon}
         </div>
-        <h3 className="text-xl font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{title}</h3>
+        <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{title}</h3>
         <ul className="list-disc list-inside text-foreground/80 text-sm space-y-1 pl-2">
           {skills.map((s, idx) => (
             <li key={idx}>{s}</li>
@@ -36,105 +68,99 @@ export function AboutSection() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       </div>
-      
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-xl text-primary font-medium mb-3">About Me</h2>
           <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-            My Technology Story
+            Creative Web & Software Developer
           </h3>
         </div>
-
-        <div className="flex flex-col lg:flex-row items-center gap-14 mb-20">
-          <div className="w-full lg:w-2/5 animate-fade-in">
-            <div className="relative group">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl transition-all">
-                <AspectRatio ratio={4/5} className="bg-muted flex items-center justify-center">
-                  <img 
-                    src="/lovable-uploads/6c7b8875-04d9-47ef-8bda-e665b2b0a918.png"
-                    alt="Personal Portrait"
-                    className="w-full h-full object-cover object-center brightness-105 contrast-105"
-                    style={{ background: "linear-gradient(135deg, #2e026d20 20%, #13aed680 100%)" }}
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=400&h=500&q=80";
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
-                </AspectRatio>
-              </div>
-              <div className="absolute -z-10 inset-0 blur-3xl bg-gradient-to-tr from-primary/30 to-secondary/20 opacity-70 scale-105" />
-              <div className="absolute top-5 -right-3 w-16 h-16 bg-primary/30 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-secondary/30 rounded-full blur-2xl animate-pulse delay-300" />
+        {/* Responsive split: tech/skills LEFT, summary/person RIGHT */}
+        <div className="flex flex-col-reverse lg:flex-row items-center gap-14 mb-10">
+          {/* Left: Skills */}
+          <div className="w-full lg:w-1/2">
+            <LanguageIconRow />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+              <SkillFocusCard
+                icon={<Code size={20} />}
+                title="Frontend Web"
+                skills={[
+                  "React & Next.js",
+                  "Tailwind CSS",
+                  "UI/UX & Accessibility",
+                  "PWA & SEO",
+                  "Performance Tuning"
+                ]}
+              />
+              <SkillFocusCard
+                icon={<Monitor size={20} />}
+                title="Backend & APIs"
+                skills={[
+                  "Node.js, Express",
+                  "RESTful APIs, Auth",
+                  "SQL/NoSQL DB",
+                  "Cloud Deployments",
+                  "Secure Web Apps"
+                ]}
+              />
+              <SkillFocusCard
+                icon={<Terminal size={20} />}
+                title="Networks & Security"
+                skills={[
+                  "Network Design",
+                  "Firewall & Security",
+                  "Pentesting & Audit",
+                  "Monitoring Tools"
+                ]}
+              />
+              <SkillFocusCard
+                icon={<Cloud size={20} />}
+                title="Cloud & IoT"
+                skills={[
+                  "AWS, GCP, Azure",
+                  "IoT Device Integration",
+                  "Data Streaming, Analytics"
+                ]}
+              />
+              <SkillFocusCard
+                icon={<Laptop size={20} />}
+                title="Automation & Vision"
+                skills={[
+                  "PLCs & Automation",
+                  "Industrial IoT",
+                  "Machine Vision (Hikrobot)",
+                  "Testing Systems"
+                ]}
+              />
             </div>
           </div>
-
-          <div className="w-full lg:w-3/5 animate-fade-in">
-            <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-                Hi, I'm Refael Pangaribuan — Creative Web & Software Developer
+          {/* RIGHT: Photo + summary text */}
+          <div className="w-full lg:w-1/2 animate-fade-in flex flex-col gap-6 items-center">
+            <div className="relative group w-60 mx-auto rounded-2xl overflow-hidden shadow-2xl mb-4">
+              <AspectRatio ratio={4/5} className="bg-muted flex items-center justify-center">
+                <img
+                  src="/lovable-uploads/6c7b8875-04d9-47ef-8bda-e665b2b0a918.png"
+                  alt="Personal Portrait"
+                  className="w-full h-full object-cover object-center brightness-105 contrast-105"
+                  style={{ background: "linear-gradient(135deg, #2e026d20 20%, #13aed680 100%)" }}
+                  onError={e => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "/lovable-uploads/b9d1f378-aafe-4286-b779-ff33b562a627.png";
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent pointer-events-none" />
+              </AspectRatio>
+              <div className="absolute -z-10 inset-0 blur-3xl bg-gradient-to-tr from-primary/30 to-secondary/20 opacity-70 scale-105" />
+              <div className="absolute top-5 -right-3 w-10 h-10 bg-primary/30 rounded-full blur-2xl animate-pulse" />
+              <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-secondary/30 rounded-full blur-2xl animate-pulse delay-300" />
+            </div>
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                Hi, I'm Refael Pangaribuan
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I am passionate about web development, system automation, and emerging technology. As a Computer Technology undergrad, my journey centers on modern website creation, powerful web infrastructures, and secure networks.<br />
-                My hands-on experience spans scalable full-stack development, cloud computing, and real-time IoT platforms. I specialize in translating complex challenges into innovative, seamless user experiences.<br />
-                I also enjoy building automation and machine vision solutions (like Hikrobot & PLCs), always focusing on blending digital creativity with practical engineering.
+                Passionate about web development, automation, and network systems. As a Computer Technology student, I love building modern websites, automating processes, and designing robust cloud and IoT infrastructures. My experience covers full stack, cloud, and security—from APIs to pixel-perfect UX. I also build smart automation and vision solutions, always blending tech with practical engineering impact.
               </p>
-              
-              {/* Skill Focus Cards - not combined, each area individual */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <SkillFocusCard 
-                  icon={<Code size={22} />}
-                  title="Frontend Web Development"
-                  skills={[
-                    "React & Next.js (SPA/PWA)",
-                    "Tailwind CSS & UI Libraries",
-                    "Responsive Design",
-                    "Accessible UI/UX",
-                    "Performance Optimization"
-                  ]}
-                />
-                <SkillFocusCard 
-                  icon={<Monitor size={22} />}
-                  title="Backend & APIs"
-                  skills={[
-                    "Node.js, Express, RESTful APIs",
-                    "Authentication & Authorization",
-                    "Database Integration (SQL/NoSQL)",
-                    "Cloud Deployment (Vercel, AWS)",
-                    "SEO & Security"
-                  ]}
-                />
-                <SkillFocusCard 
-                  icon={<Terminal size={22} />}
-                  title="Networking & Security"
-                  skills={[
-                    "Network Architecture",
-                    "Firewall/Security Implementation",
-                    "Vulnerability Assessment",
-                    "Monitoring & Troubleshooting"
-                  ]}
-                />
-                <SkillFocusCard 
-                  icon={<Cloud size={22} />}
-                  title="Cloud Systems & IoT"
-                  skills={[
-                    "AWS, GCP, Azure",
-                    "IoT Device Integration",
-                    "Data Streaming",
-                    "Real-Time Analytics"
-                  ]}
-                />
-                <SkillFocusCard 
-                  icon={<Laptop size={22} />}
-                  title="Automation & Vision"
-                  skills={[
-                    "PLC Control Systems",
-                    "Industrial IoT",
-                    "Machine Vision (Hikrobot)",
-                    "Automated Testing"
-                  ]}
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -142,4 +168,3 @@ export function AboutSection() {
     </section>
   );
 }
-
