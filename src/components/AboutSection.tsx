@@ -9,24 +9,28 @@ type SkillCardProps = {
 };
 
 const tools = [
-  { name: "C/C++", icon: <FileCode size={20} color="#154484" />, color: "bg-[#154484] text-white" },
-  { name: "CSS", icon: <Code size={20} color="#00A6EA" />, color: "bg-[#254bdd] text-white" },
-  { name: "HTML", icon: <Code size={20} color="#DE4C25" />, color: "bg-[#e34c26] text-white" },
-  { name: "Java", icon: <Code size={20} color="#FFD43B" />, color: "bg-[#f2b143] text-black" },
-  { name: "PHP", icon: <Code size={20} color="#858EBB" />, color: "bg-[#8993be] text-white" },
-  { name: "Python", icon: <Code size={20} color="#f7e018" />, color: "bg-[#f7e018] text-black" },
-  { name: "Bootstrap", icon: <Globe size={20} color="#7911F6" />, color: "bg-[#7633f9] text-white" },
-  { name: "Laravel", icon: <Server size={20} color="#F05340" />, color: "bg-[#f55243] text-white" },
-  { name: "Nginx", icon: <Server size={20} color="#119B4C" />, color: "bg-[#009639] text-white" },
-  { name: "Apache", icon: <Server size={20} color="#CC2139" />, color: "bg-[#d22128] text-white" },
-  { name: "MySQL", icon: <Database size={20} color="#005C83" />, color: "bg-[#00758f] text-white" },
-  { name: "MongoDB", icon: <Database size={20} color="#4DB33D" />, color: "bg-[#4DB33D] text-white" },
-  { name: "Git", icon: <GitBranch size={20} color="#F05032" />, color: "bg-[#f34f29] text-white" },
-  { name: "Github", icon: <GitBranch size={20} color="#24292F" />, color: "bg-[#24292F] text-white" },
-  { name: "Arduino", icon: <Cpu size={20} color="#00979C" />, color: "bg-[#00979C] text-white" },
-  { name: "Cisco", icon: <Network size={20} color="#0397d6" />, color: "bg-[#1b63b2] text-white" },
-  { name: "Kubernetes", icon: <Server size={20} color="#326de6" />, color: "bg-[#326de6] text-white" },
-  { name: "Postman", icon: <Globe size={20} color="#fd6c35" />, color: "bg-[#fd6c35] text-white" },
+  { name: "C/C++", icon: <FileCode size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "CSS", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "HTML", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Java", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "PHP", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Python", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Bootstrap", icon: <Globe size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Laravel", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Nginx", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Apache", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "MySQL", icon: <Database size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "MongoDB", icon: <Database size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Git", icon: <GitBranch size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Github", icon: <GitBranch size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Arduino", icon: <Cpu size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Cisco", icon: <Network size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Kubernetes", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Postman", icon: <Globe size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "WordPress", icon: <Globe size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Visual Studio", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "CX-Programmer", icon: <Monitor size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Boa Spot", icon: <Shield size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
 ];
 
 function SkillCard({ icon, title, description }: SkillCardProps) {
@@ -84,7 +88,6 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* New Section for Tools */}
         <div className="mt-24">
           <div className="text-center mb-16">
             <h2 className="text-xl text-primary font-medium mb-3">My Tools</h2>
