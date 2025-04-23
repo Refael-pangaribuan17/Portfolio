@@ -2,34 +2,34 @@
 import { Award, Briefcase, GraduationCap, Book, Star, Monitor, Code, BadgeCheck } from "lucide-react";
 import { Card } from "./ui/card";
 
-// Achievement images (can use URLs or /lovable-uploads/ for uploaded images)
+// Achievement images (use your uploaded or thematic images)
 const ACHIEVEMENTS = [
   {
     year: 2024,
     title: "Best Web Developer Award",
-    desc: "Honored for creating an innovative and user-centric web application in a national development competition.",
-    icon: <Monitor className="w-7 h-7 text-yellow-400" />,
-    image: "/lovable-uploads/6349ba89-b06f-4097-bb92-e425be59dc49.png"
+    desc: "Recognized for designing an innovative, user-focused web platform at a national competition. Combined technical excellence and creative UI/UX in production-ready code.",
+    icon: <Monitor className="w-10 h-10 text-yellow-400" />,
+    image: "/lovable-uploads/6c7b8875-04d9-47ef-8bda-e665b2b0a918.png", // Your image for highlight
   },
   {
     year: 2023,
-    title: "2nd Place in Network Design Competition",
-    desc: "Achieved second place in a nation-wide network design challenge.",
-    icon: <Award className="w-7 h-7 text-yellow-400" />,
+    title: "2nd Place, National Network Design Challenge",
+    desc: "Awarded second for architecting robust, scalable computer network solutions under pressure, showcasing a strong foundation in both networking and web infrastructure.",
+    icon: <Award className="w-10 h-10 text-yellow-400" />,
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=cover&w=500&q=80"
   },
   {
     year: 2023,
-    title: "Full Stack Development Certification",
-    desc: "Attained professional certification in full stack web development.",
-    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
-    image: null
+    title: "Full Stack Developer Certificate",
+    desc: "Completed an industry-standard Full Stack Web Development program, gaining end-to-end experience from backend architecture to dynamic, interactive front-end engineering.",
+    icon: <BadgeCheck className="w-10 h-10 text-yellow-400" />,
+    image: null // text-based card if unavailable
   },
   {
     year: 2022,
-    title: "CompTIA Network+ Certification",
-    desc: "Earned international CompTIA Network+ certification in computer networking.",
-    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
+    title: "CompTIA Network+ Certified",
+    desc: "Earned international recognition for networking proficiency, including protocols, security topologies, and network troubleshooting relevant for robust web platforms.",
+    icon: <BadgeCheck className="w-10 h-10 text-yellow-400" />,
     image: null
   }
 ];
@@ -37,35 +37,36 @@ const ACHIEVEMENTS = [
 const INTERNSHIPS = [
   {
     year: 2024,
-    position: "Full Stack Developer Intern",
+    position: "Full Stack Web Developer Intern",
     company: "PT Telekomunikasi Indonesia",
-    desc: "Worked on web applications with React and Node.js. Assisted with network monitoring and architectural design.",
-    icon: <Code className="w-6 h-6 text-yellow-400" />
+    desc: "Created and optimized scalable web applications using React and Node.js. Supported network monitoring and infrastructure design, fusing backend reliability with intuitive web UI.",
+    icon: <Code className="w-8 h-8 text-yellow-400" />
   },
   {
     year: 2023,
-    position: "Web & Cloud Infrastructure Intern",
+    position: "Cloud & Web Platform Intern",
     company: "Amazon Web Services (AWS) Indonesia",
-    desc: "Contributed to cloud-based web platform development and optimized AWS services.",
-    icon: <Monitor className="w-6 h-6 text-yellow-400" />
+    desc: "Contributed to enterprise-level web system architecture and cloud deployments, automating reliable DevOps workflows and hands-on with website scaling.",
+    icon: <Monitor className="w-8 h-8 text-yellow-400" />
   }
 ];
 
 const DEGREE = {
-  degree: "Associate of Computer Technology (D3)",
+  degree: "Associate of Computer Technology (A.Sc.)",
   institution: "Institut Teknologi Del",
-  year: "2025 (On Going)",
-  description: "A hands-on program focused on practical skills in computer technology, web development, networking, and cloud infrastructure.",
+  year: "2025 (Ongoing)",
+  description: "A practical journey developing strong skills in computer technology, web design, modern software engineering, and cloud systems—preparing for high-impact work in web development, networking, and automation.",
   courses: [
-    "Web Development Fundamentals",
-    "Frontend and Backend Programming",
-    "Database Management Systems",
+    "Web Programming & Technologies",
+    "Frontend & Backend Web Engineering",
+    "Database Management & SQL",
     "Computer Networking",
-    "Cybersecurity Essentials",
-    "Cloud Computing Platforms",
-    "Embedded & IoT Systems",
+    "Cybersecurity Principles",
+    "Cloud Service Platforms",
+    "Internet of Things Applications",
     "Network System Software",
-    "Machine Learning Basics"
+    "Machine Learning Fundamentals",
+    "UX/UI for Web Developers"
   ],
   icon: <GraduationCap className="w-10 h-10 text-yellow-400" />,
 };
@@ -76,21 +77,26 @@ export function PrestasiAkademikSection() {
       {/* Decorative Background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/10 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-yellow-400/10 rounded-full blur-3xl" />
-      
+
       <div className="container mx-auto max-w-6xl px-4 relative">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Award className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">
+          <Award className="w-16 h-16 text-yellow-400 mx-auto mb-6 drop-shadow-glow" />
+          <h2
+            className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-100 via-yellow-500 to-yellow-300 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,219,77,0.9)] animate-pulse"
+            style={{
+              textShadow: '0px 0px 32px #ffee8c, 0px 2px 18px #ebda7a, 0px 2px 24px #fffacd'
+            }}
+          >
             Achievements & Academic Journey
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover my journey in computer technology—where innovation, creativity, and web development meet network and cloud expertise.
+            Explore my technology milestones—where web development, creative solutions, and advanced networking shape tomorrow’s innovation.
           </p>
         </div>
 
         {/* Academic / Degree */}
-        <Card className="mb-16 p-8 bg-card/60 backdrop-blur border-yellow-400/20 animate-fade-in">
+        <Card className="mb-16 p-8 bg-card/50 backdrop-blur border-yellow-400/20 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-start gap-4 mb-5">
@@ -106,7 +112,7 @@ export function PrestasiAkademikSection() {
             <div>
               <h4 className="flex items-center gap-2 text-lg font-semibold mb-3">
                 <Book className="w-5 h-5 text-yellow-400" />
-                Main Courses
+                Key Courses
               </h4>
               <div className="grid grid-cols-2 gap-3">
                 {DEGREE.courses.map((course, idx) => (
@@ -133,7 +139,7 @@ export function PrestasiAkademikSection() {
             {INTERNSHIPS.map((intern, idx) => (
               <Card 
                 key={idx}
-                className="p-6 bg-card/60 backdrop-blur hover:bg-card/80 transition-all duration-300 border-yellow-400/20 animate-fade-in"
+                className="p-6 bg-card/70 backdrop-blur hover:bg-card/80 transition-all duration-300 border-yellow-400/20 animate-fade-in"
                 style={{animationDelay: `${idx * 120}ms`}}
               >
                 <div className="flex items-start gap-4">
@@ -153,7 +159,7 @@ export function PrestasiAkademikSection() {
           </div>
         </div>
 
-        {/* Achievements Timeline - with optional photo */}
+        {/* Achievements Timeline - with improved photo styling */}
         <div className="relative">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Award className="w-8 h-8 text-yellow-400" />
@@ -167,29 +173,29 @@ export function PrestasiAkademikSection() {
                 className="relative pl-20 animate-fade-in"
                 style={{animationDelay: `${idx * 160}ms`}}
               >
-                <div className="absolute left-0 top-0 p-2 rounded-full bg-yellow-400/10 border border-yellow-400/20">
+                <div className="absolute left-0 top-0 p-3 rounded-full bg-yellow-400/10 border border-yellow-400/20">
                   {ach.icon}
                 </div>
-                <Card className="p-4 flex items-center gap-5 bg-card/60 backdrop-blur border-yellow-400/20">
+                <Card className="p-5 flex items-center gap-7 bg-card/70 backdrop-blur border-yellow-400/20">
                   {ach.image ? (
                     <img 
                       src={ach.image}
                       alt={ach.title}
-                      className="w-16 h-16 object-cover object-center rounded-md border border-yellow-400/20 shadow"
-                      style={{ backgroundColor: "#f4f1e8" }}
+                      className="w-20 h-20 object-cover object-center rounded-lg border-2 border-yellow-400 shadow-xl bg-yellow-50"
+                      style={{ backgroundColor: "#fffbe4", objectFit: "cover" }}
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.src = "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=facearea&w=200&h=200&q=80";
                       }}
                     />
                   ) : (
-                    <div className="w-16 h-16 flex items-center justify-center rounded-md bg-yellow-100 border border-yellow-300 text-yellow-400">
-                      <Award className="w-8 h-8" />
+                    <div className="w-20 h-20 flex items-center justify-center rounded-lg bg-yellow-100 border-2 border-yellow-300 text-yellow-400">
+                      <Award className="w-10 h-10" />
                     </div>
                   )}
                   <div className="flex flex-col gap-1">
-                    <span className="text-sm font-medium text-yellow-400">{ach.year}</span>
-                    <h4 className="text-base font-semibold">{ach.title}</h4>
+                    <span className="text-base font-semibold text-yellow-400">{ach.year}</span>
+                    <h4 className="text-lg font-bold">{ach.title}</h4>
                     <p className="text-sm text-muted-foreground">{ach.desc}</p>
                   </div>
                 </Card>
@@ -201,3 +207,4 @@ export function PrestasiAkademikSection() {
     </section>
   );
 }
+
