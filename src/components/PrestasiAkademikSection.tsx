@@ -1,5 +1,13 @@
+
+import { useState } from "react";
 import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code, Terminal, Monitor } from "lucide-react";
 import { Card } from "./ui/card";
+
+// Add images for achievement preview
+const achievementImages = [
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",   // Example photo for 2024
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",   // Example photo for 2023
+];
 
 const ACADEMIC = {
   degree: "D3 Teknologi Komputer",
@@ -39,35 +47,50 @@ const ACHIEVEMENTS = [
     year: 2024,
     title: "Best Web Developer Award",
     desc: "Penghargaan untuk pengembangan aplikasi web inovatif dalam kompetisi tingkat nasional.",
-    icon: <Monitor className="w-7 h-7 text-yellow-400" />,
+    icon: <Monitor className="w-5 h-5 text-yellow-400" />, // Smaller icon
+    image: achievementImages[0],
   },
   {
     year: 2023,
     title: "Juara 2 Network Design Competition",
     desc: "Meraih peringkat 2 tingkat nasional dalam lomba desain jaringan komputer.",
-    icon: <Award className="w-7 h-7 text-yellow-400" />,
+    icon: <Award className="w-5 h-5 text-yellow-400" />,
+    image: achievementImages[1],
   },
   {
     year: 2023,
     title: "Full Stack Development Certification",
     desc: "Sertifikasi profesional dalam pengembangan aplikasi web full stack.",
-    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
+    icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
+    image: null,
   },
   {
     year: 2022,
     title: "Sertifikasi CompTIA Network+",
     desc: "Memperoleh sertifikasi internasional CompTIA Network+ di bidang jaringan.",
-    icon: <BadgeCheck className="w-7 h-7 text-yellow-400" />,
+    icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
+    image: null,
   }
 ];
 
 export function PrestasiAkademikSection() {
+  const [modalImg, setModalImg] = useState<string | null>(null);
+
   return (
     <section id="achievements" className="w-full py-20 bg-background/80 relative overflow-hidden">
+      {/* Modal for Image Preview */}
+      {modalImg && (
+        <div
+          className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 animate-fade-in"
+          onClick={() => setModalImg(null)}
+        >
+          <img src={modalImg} alt="Achievement" className="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl border-4 border-yellow-200 object-contain" />
+        </div>
+      )}
+
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/10 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-yellow-400/10 rounded-full blur-3xl" />
-      
       <div className="container mx-auto max-w-6xl px-4 relative">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -79,7 +102,6 @@ export function PrestasiAkademikSection() {
             Perjalanan akademik dan pencapaian yang telah diraih dalam bidang teknologi komputer
           </p>
         </div>
-
         {/* Academic Section */}
         <Card className="mb-16 p-8 bg-card/50 backdrop-blur border-yellow-400/20 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-8">
@@ -113,7 +135,6 @@ export function PrestasiAkademikSection() {
             </div>
           </div>
         </Card>
-
         {/* Internships Grid */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
@@ -143,7 +164,6 @@ export function PrestasiAkademikSection() {
             ))}
           </div>
         </div>
-
         {/* Achievements Timeline */}
         <div className="relative">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
@@ -158,10 +178,21 @@ export function PrestasiAkademikSection() {
                 className="relative pl-16 animate-fade-in"
                 style={{animationDelay: `${idx * 200}ms`}}
               >
-                <div className="absolute left-0 top-0 p-2 rounded-full bg-yellow-400/10 border border-yellow-400/20">
-                  <BadgeCheck className="w-6 h-6 text-yellow-400" />
+                {/* Make icon smaller */}
+                <div className="absolute left-0 top-0 p-1 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center">
+                  {ach.icon}
                 </div>
-                <Card className="p-6 bg-card/50 backdrop-blur border-yellow-400/20">
+                <Card className="p-6 bg-card/50 backdrop-blur border-yellow-400/20 flex items-center gap-4">
+                  {ach.image ? (
+                    <img
+                      src={ach.image}
+                      className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
+                      alt="Achievement"
+                      onClick={() => setModalImg(ach.image!)}
+                    />
+                  ) : (
+                    <div className="w-16 h-16 flex items-center justify-center bg-yellow-400/5 rounded-md" />
+                  )}
                   <div className="flex flex-col gap-2">
                     <span className="text-sm font-medium text-yellow-400">{ach.year}</span>
                     <h4 className="text-lg font-semibold">{ach.title}</h4>
