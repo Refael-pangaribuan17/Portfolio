@@ -1,4 +1,3 @@
-
 import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
 import { Hash, FileCode, Database, GitBranch, Server, Terminal, Globe, Laptop, Lock, FileBadge } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
@@ -37,10 +36,10 @@ const tools = [
 
 function SkillCard({ icon, title, description }: SkillCardProps) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/30 via-secondary/20 to-background/30 backdrop-blur-sm p-6 transition-all duration-500 hover:transform hover:-translate-y-2">
+    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/30 via-secondary/20 to-background/30 backdrop-blur-sm p-6 transition-all duration-500 hover:transform hover:scale-105">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10">
-        <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center text-primary mb-5 transform transition-transform duration-500 group-hover:scale-110">
+        <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-xl flex items-center justify-center text-primary mb-5 transform transition-transform duration-500 group-hover:rotate-[20deg]">
           {icon}
         </div>
         <h3 className="text-lg font-bold mb-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">{title}</h3>
@@ -58,6 +57,7 @@ export function AboutSection() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       </div>
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section About Me */}
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-xl text-primary font-medium mb-3">About Me</h2>
           <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
@@ -69,7 +69,7 @@ export function AboutSection() {
           <div className="w-full lg:w-2/5 animate-fade-in">
             <div className="relative group">
               <div className="relative rounded-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
-                <AspectRatio ratio={4/5} className="bg-muted">
+                <AspectRatio ratio={4 / 5} className="bg-muted">
                   <img 
                     src="/public/lovable-uploads/6349ba89-b06f-4097-bb92-e425be59dc49.png"
                     alt="Portrait" 
@@ -90,66 +90,27 @@ export function AboutSection() {
                 I'm Refael Pangaribuan, a Technology Enthusiast
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I am a student of Computer Technology at the D3 level with a strong interest in digital technology, particularly in networking, cybersecurity, Internet of Things (IoT), and industrial automation. 
-                
-                Throughout my studies, I have actively developed skills in various fields, from modern web application development to the integration of IoT systems and machine vision. I have experience using technologies like React and Node.js to build responsive web applications, along with knowledge in database management and cloud services. 
-                
-                In the IoT space, I am passionate about designing real-time monitoring and control systems with a focus on efficiency and scalability. Additionally, I have studied the fundamentals of cybersecurity to ensure that every solution developed remains secure and reliable. 
-                
-                In the field of automation, I have a solid understanding of using devices like Hikrobot and integrating them with PLC for visual recognition and quality control systems. I believe that the ability to combine these various technologies is key to addressing the challenges of the Industry 4.0 era..
+                I am a student of Computer Technology at the D3 level with a strong interest in digital technology, particularly in networking, cybersecurity, Internet of Things (IoT), and industrial automation.
               </p>
-            
-              {/* Tools row */}
-              <div className="flex flex-wrap gap-2 mt-8">
-                {tools.map((t) => (
-                  <span key={t.name} className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${t.color}`}>
-                    {t.icon}
-                    {t.name}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
         </div>
 
+        {/* New Section for Tools */}
         <div className="mt-24">
           <div className="text-center mb-16">
-            <h2 className="text-xl text-primary font-medium mb-3">My Expertise</h2>
+            <h2 className="text-xl text-primary font-medium mb-3">My Tools</h2>
             <h3 className="text-4xl font-bold bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-              Technical Skills
+              Technologies & Frameworks
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <SkillCard 
-              icon={<Code size={28} />}
-              title="Web Development"
-              description="Full stack web development (React, Node.js, REST APIs, responsive design)."
-            />
-            <SkillCard 
-              icon={<Cloud size={28} />}
-              title="Cloud"
-              description="Cloud infrastructure, deployment, and automation (AWS, Nginx, Docker)."
-            />
-            <SkillCard 
-              icon={<Network size={28} />}
-              title="Networking"
-              description="Jaringan komputer modern, konfigurasi LAN/WAN, protokol, Cisco."
-            />
-            <SkillCard 
-              icon={<Shield size={28} />}
-              title="Cyber Security"
-              description="Network/web security, vulnerabilities, securing infrastructure."
-            />
-            <SkillCard 
-              icon={<Cpu size={28} />}
-              title="Machine Vision"
-              description="Vision system, image analysis, automation for quality control."
-            />
-            <SkillCard 
-              icon={<Monitor size={28} />}
-              title="IoT & Automation"
-              description="IoT integration, device networking, smart automation systems."
-            />
+          <div className="flex flex-wrap gap-2 justify-center">
+            {tools.map((t) => (
+              <span key={t.name} className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${t.color}`}>
+                {t.icon}
+                {t.name}
+              </span>
+            ))}
           </div>
         </div>
       </div>
