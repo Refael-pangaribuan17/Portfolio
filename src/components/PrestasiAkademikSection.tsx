@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code, Terminal, Monitor } from "lucide-react";
+import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code } from "lucide-react";
 import { Card } from "./ui/card";
 
 const achievementImages = [
@@ -8,17 +8,17 @@ const achievementImages = [
 ];
 
 const ACADEMIC = {
-  degree: "D3 Teknologi Komputer",
-  institution: "Institut Teknologi Del",
+  degree: "Associate Degree in Computer Technology",
+  institution: "Del Institute of Technology",
   year: "2025 (On Going)",
-  description: "Institut Teknologi Del berlokasi di desa Sitoluama, kecamatan Laguboti, kabupaten Toba Samosir (Tobasa), Sumatera Utara.",
+  description: "Del Institute of Technology is located in Sitoluama village, Laguboti district, Toba Samosir (Tobasa) regency, North Sumatra.",
   courses: [
     "Web Development",
-    "Sistem Komputasi Awan", 
-    "Keamanan Jaringan",
-    "Embedded System",
-    "Internetworkin",
-    "Teknologi IOT"
+    "Cloud Computing Systems",
+    "Network Security",
+    "Embedded Systems",
+    "Internetworking",
+    "IoT Technology"
   ],
   icon: <GraduationCap className="w-10 h-10 text-yellow-400" />,
 };
@@ -28,13 +28,22 @@ const INTERNSHIPS = [
     year: 2025,
     position: "Machine Vision Intern",
     company: "ACSGroup PT Autojaya",
-    desc: "Membantu pengembangan sistem inspeksi otomatis berbasis machine vision yang terhubung dengan PLC Hikrobot untuk quality control di lini produksi.",
+    desc: "Assisted in developing an automated inspection system based on machine vision connected to Hikrobot PLC for production line quality control.",
     icon: <Code className="w-6 h-6 text-yellow-400" />,
   },
-  
 ];
 
 const ACHIEVEMENTS = [
+  {
+    year: 2024,
+    title: "BPJS Kesehatan Healthkathon 2024",
+    desc: "Successfully completed the first round and advanced to the penetration testing round with team name Z#.",
+    icon: <Trophy className="w-5 h-5 text-yellow-400" />,
+    images: [
+      "/lovable-uploads/fb69ecfb-c425-4752-a43b-73fb34cf00bd.png",
+      "/lovable-uploads/27900713-2b72-421a-a161-cb103bf8b33a.png"
+    ]
+  },
   {
     year: 2024,
     title: "1st Place - Capture The Flag Competition",
@@ -51,22 +60,22 @@ const ACHIEVEMENTS = [
   },
   {
     year: 2023,
-    title: "Juara 2 Network Design Competition",
-    desc: "Meraih peringkat 2 tingkat nasional dalam lomba desain jaringan komputer.",
+    title: "2nd Place - National Network Design Competition",
+    desc: "Achieved second place nationwide in computer network design competition.",
     icon: <Award className="w-5 h-5 text-yellow-400" />,
     image: achievementImages[1],
   },
   {
     year: 2023,
     title: "Full Stack Development Certification",
-    desc: "Sertifikasi profesional dalam pengembangan aplikasi web full stack.",
+    desc: "Professional certification in full stack web application development.",
     icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
     image: null,
   },
   {
     year: 2022,
-    title: "Sertifikasi CompTIA Network+",
-    desc: "Memperoleh sertifikasi internasional CompTIA Network+ di bidang jaringan.",
+    title: "CompTIA Network+ Certification",
+    desc: "Obtained international CompTIA Network+ certification in networking.",
     icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
     image: null,
   }
@@ -92,10 +101,10 @@ export function PrestasiAkademikSection() {
         <div className="text-center mb-16 animate-fade-in">
           <Trophy className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">
-            Prestasi &amp; Akademik
+            Academic &amp; Achievements
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Perjalanan akademik dan pencapaian yang telah diraih dalam bidang teknologi komputer
+            Academic journey and achievements in computer technology
           </p>
         </div>
         <Card className="mb-16 p-8 bg-card/50 backdrop-blur border-yellow-400/20 animate-fade-in">
@@ -161,7 +170,7 @@ export function PrestasiAkademikSection() {
         <div className="relative">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Award className="w-8 h-8 text-yellow-400" />
-            Prestasi
+            Achievements
           </h3>
           <div className="absolute left-8 top-20 bottom-0 w-px bg-gradient-to-b from-yellow-400/50 to-transparent" />
           <div className="space-y-8">
@@ -174,21 +183,37 @@ export function PrestasiAkademikSection() {
                 <div className="absolute left-0 top-0 p-1 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center">
                   {ach.icon}
                 </div>
-                <Card className="p-6 bg-card/50 backdrop-blur border-yellow-400/20 flex items-center gap-4">
-                  {ach.image ? (
-                    <img
-                      src={ach.image}
-                      className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
-                      alt="Achievement"
-                      onClick={() => setModalImg(ach.image!)}
-                    />
-                  ) : (
-                    <div className="w-16 h-16 flex items-center justify-center bg-yellow-400/5 rounded-md" />
-                  )}
-                  <div className="flex flex-col gap-2">
-                    <span className="text-sm font-medium text-yellow-400">{ach.year}</span>
-                    <h4 className="text-lg font-semibold">{ach.title}</h4>
-                    <p className="text-sm text-muted-foreground">{ach.desc}</p>
+                <Card className="p-6 bg-card/50 backdrop-blur border-yellow-400/20">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex items-center gap-4">
+                      {ach.images ? (
+                        <div className="flex gap-2">
+                          {ach.images.map((img, imgIdx) => (
+                            <img
+                              key={imgIdx}
+                              src={img}
+                              className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
+                              alt="Achievement"
+                              onClick={() => setModalImg(img)}
+                            />
+                          ))}
+                        </div>
+                      ) : ach.image ? (
+                        <img
+                          src={ach.image}
+                          className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
+                          alt="Achievement"
+                          onClick={() => setModalImg(ach.image!)}
+                        />
+                      ) : (
+                        <div className="w-16 h-16 flex items-center justify-center bg-yellow-400/5 rounded-md" />
+                      )}
+                      <div className="flex flex-col gap-2">
+                        <span className="text-sm font-medium text-yellow-400">{ach.year}</span>
+                        <h4 className="text-lg font-semibold">{ach.title}</h4>
+                        <p className="text-sm text-muted-foreground">{ach.desc}</p>
+                      </div>
+                    </div>
                   </div>
                 </Card>
               </div>
