@@ -32,6 +32,10 @@ const tools = [
   { name: "Visual Studio", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "CX-Programmer", icon: <Monitor size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Boa Spot", icon: <Shield size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "Docker", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#2496ED] text-white" },
+  { name: "OpenTofu", icon: <Shield size={20} color="#FFFFFF" />, color: "bg-[#FF7F50] text-white" },
+  { name: "VirtualBox", icon: <Monitor size={20} color="#FFFFFF" />, color: "bg-[#183A61] text-white" },
+  { name: "XAMPP", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FB7A24] text-white" },
 ];
 
 function SkillCard({ icon, title, description }: SkillCardProps) {
