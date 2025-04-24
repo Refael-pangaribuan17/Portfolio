@@ -59,11 +59,11 @@ const ACHIEVEMENTS = [
     image: "/lovable-uploads/84f6ed3e-1275-40f5-802d-0c697c90e62b.png",
   },
   {
-    year: 2023,
-    title: "2nd Place - National Network Design Competition",
-    desc: "Achieved second place nationwide in computer network design competition.",
+    year: 2024,
+    title: "Competition VishwaCTF'25",
+    desc: "Participated in an international cybersecurity competition organized by CyberCell VIIT and powered by HackerOne..",
     icon: <Award className="w-5 h-5 text-yellow-400" />,
-    image: achievementImages[1],
+    image: "/lovable-uploads/foto.png",
   },
   {
     year: 2023,
