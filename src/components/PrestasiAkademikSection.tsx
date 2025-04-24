@@ -1,12 +1,10 @@
-
 import { useState } from "react";
 import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code, Terminal, Monitor } from "lucide-react";
 import { Card } from "./ui/card";
 
-// Add images for achievement preview
 const achievementImages = [
-  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",   // Example photo for 2024
-  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",   // Example photo for 2023
+  "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+  "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
 ];
 
 const ACADEMIC = {
@@ -45,10 +43,17 @@ const INTERNSHIPS = [
 const ACHIEVEMENTS = [
   {
     year: 2024,
-    title: "Best Web Developer Award",
-    desc: "Penghargaan untuk pengembangan aplikasi web inovatif dalam kompetisi tingkat nasional.",
-    icon: <Monitor className="w-5 h-5 text-yellow-400" />, // Smaller icon
-    image: achievementImages[0],
+    title: "1st Place - National CTF Competition",
+    desc: "Won first place in the Capture The Flag competition organized by the National Cyber and Crypto Agency (BSSN) in collaboration with Huawei.",
+    icon: <Trophy className="w-5 h-5 text-yellow-400" />,
+    image: "/lovable-uploads/77551b80-a5d5-4892-bc7e-adf4b16c49f6.png",
+  },
+  {
+    year: 2024,
+    title: "Cyber Strike 1.0 CTF Tournament",
+    desc: "Participated in the Cyber Strike 1.0 CTF Tournament organized by Indonesian Armed Forces Cyber Unit (SATSIBER TNI) in October 2024.",
+    icon: <Trophy className="w-5 h-5 text-yellow-400" />,
+    image: "/lovable-uploads/84f6ed3e-1275-40f5-802d-0c697c90e62b.png",
   },
   {
     year: 2023,
@@ -78,7 +83,6 @@ export function PrestasiAkademikSection() {
 
   return (
     <section id="achievements" className="w-full py-20 bg-background/80 relative overflow-hidden">
-      {/* Modal for Image Preview */}
       {modalImg && (
         <div
           className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 animate-fade-in"
@@ -88,11 +92,9 @@ export function PrestasiAkademikSection() {
         </div>
       )}
 
-      {/* Decorative Background Elements */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/10 via-background to-background" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-yellow-400/10 rounded-full blur-3xl" />
       <div className="container mx-auto max-w-6xl px-4 relative">
-        {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Trophy className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
           <h2 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-yellow-200 to-yellow-400 bg-clip-text text-transparent">
@@ -102,7 +104,6 @@ export function PrestasiAkademikSection() {
             Perjalanan akademik dan pencapaian yang telah diraih dalam bidang teknologi komputer
           </p>
         </div>
-        {/* Academic Section */}
         <Card className="mb-16 p-8 bg-card/50 backdrop-blur border-yellow-400/20 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
@@ -135,7 +136,6 @@ export function PrestasiAkademikSection() {
             </div>
           </div>
         </Card>
-        {/* Internships Grid */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Briefcase className="w-8 h-8 text-yellow-400" />
@@ -164,7 +164,6 @@ export function PrestasiAkademikSection() {
             ))}
           </div>
         </div>
-        {/* Achievements Timeline */}
         <div className="relative">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Award className="w-8 h-8 text-yellow-400" />
@@ -178,7 +177,6 @@ export function PrestasiAkademikSection() {
                 className="relative pl-16 animate-fade-in"
                 style={{animationDelay: `${idx * 200}ms`}}
               >
-                {/* Make icon smaller */}
                 <div className="absolute left-0 top-0 p-1 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center">
                   {ach.icon}
                 </div>
