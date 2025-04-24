@@ -43,7 +43,7 @@ const INTERNSHIPS = [
 const ACHIEVEMENTS = [
   {
     year: 2024,
-    title: "1st Place - National CTF Competition",
+    title: "1st Place - Capture The Flag Competition",
     desc: "Won first place in the Capture The Flag competition organized by the National Cyber and Crypto Agency (BSSN) in collaboration with Huawei.",
     icon: <Trophy className="w-5 h-5 text-yellow-400" />,
     image: "/lovable-uploads/77551b80-a5d5-4892-bc7e-adf4b16c49f6.png",
