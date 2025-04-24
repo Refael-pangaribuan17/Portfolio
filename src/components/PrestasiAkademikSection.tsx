@@ -25,19 +25,13 @@ const ACADEMIC = {
 
 const INTERNSHIPS = [
   {
-    year: 2024,
-    position: "Full Stack Developer Intern",
-    company: "PT Telekomunikasi Indonesia",
-    desc: "Pengembangan aplikasi web menggunakan React dan Node.js, serta membantu dalam perancangan dan monitoring jaringan perusahaan.",
+    year: 2025,
+    position: "Machine Vision Intern",
+    company: "ACSGroup PT Autojaya",
+    desc: "Membantu pengembangan sistem inspeksi otomatis berbasis machine vision yang terhubung dengan PLC Hikrobot untuk quality control di lini produksi.",
     icon: <Code className="w-6 h-6 text-yellow-400" />,
   },
-  {
-    year: 2023,
-    position: "Cloud & Web Infrastructure Intern",
-    company: "Amazon Web Services (AWS) Indonesia",
-    desc: "Berpartisipasi dalam pengembangan aplikasi web berbasis cloud dan optimasi layanan AWS.",
-    icon: <Terminal className="w-6 h-6 text-yellow-400" />,
-  }
+  
 ];
 
 const ACHIEVEMENTS = [
