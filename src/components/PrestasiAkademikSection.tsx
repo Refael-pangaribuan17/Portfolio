@@ -138,7 +138,7 @@ export function PrestasiAkademikSection() {
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Briefcase className="w-8 h-8 text-yellow-400" />
-            Pengalaman Internship
+            Internship Experience
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
             {INTERNSHIPS.map((intern, idx) => (
