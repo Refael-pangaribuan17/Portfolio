@@ -1,3 +1,4 @@
+
 import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
 import { FileCode, Database, GitBranch, Server, Terminal, Globe } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
@@ -68,9 +69,10 @@ export function AboutSection() {
             <div className="relative group">
               <AspectRatio ratio={4 / 5} className="bg-muted">
                 <img
-                  src="/public/lovable-uploads/6349ba89-b06f-4097-bb92-e425be59dc49.png"
+                  src="/lovable-uploads/6349ba89-b06f-4097-bb92-e425be59dc49.png"
                   alt="Portrait"
                   className="w-full h-full object-cover object-center brightness-105 contrast-105"
+                  loading="eager"
                 />
               </AspectRatio>
             </div>
@@ -95,9 +97,12 @@ export function AboutSection() {
               Technologies & Frameworks
             </h3>
           </div>
-          <div className="flex flex-wrap gap-2 justify-center">
+          <div className="flex flex-wrap gap-3 justify-center">
             {tools.map((t) => (
-              <span key={t.name} className={`flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold ${t.color}`}>
+              <span 
+                key={t.name} 
+                className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold ${t.color} hover:scale-110 transition-transform duration-300 shadow-lg hover:shadow-xl`}
+              >
                 {t.icon}
                 {t.name}
               </span>
