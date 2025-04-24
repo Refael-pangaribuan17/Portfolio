@@ -66,19 +66,15 @@ const ACHIEVEMENTS = [
     image: "/lovable-uploads/foto.png",
   },
   {
-    year: 2023,
-    title: "Full Stack Development Certification",
-    desc: "Professional certification in full stack web application development.",
-    icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
-    image: null,
+    year: 2024,
+    title: "Capture the Flag MetaCTF",
+    desc: "participated in the ctf competition which was participated by various countries from all over the world.",
+    icon: <Award className="w-5 h-5 text-yellow-400" />,
+    images: [
+      "/lovable-uploads/meta1.png",
+      "/lovable-uploads/meta2.png"
+    ]
   },
-  {
-    year: 2022,
-    title: "CompTIA Network+ Certification",
-    desc: "Obtained international CompTIA Network+ certification in networking.",
-    icon: <BadgeCheck className="w-5 h-5 text-yellow-400" />,
-    image: null,
-  }
 ];
 
 export function PrestasiAkademikSection() {
