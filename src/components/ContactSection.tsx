@@ -100,7 +100,7 @@ export function ContactSection() {
             
             <div className="space-y-6">
               <a 
-                href="mailto:contact@refael.dev"
+                href="mailto:contact@refaelpangaribuan123@gmail.com"
                 className="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-300"
               >
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">
@@ -108,12 +108,12 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">Email</h4>
-                  <p className="text-foreground/70">contact@refael.dev</p>
+                  <p className="text-foreground/70">refaelpangaribuan123@gmail.com</p>
                 </div>
               </a>
               
               <a 
-                href="https://github.com"
+                href="https://github.com/Refael-pangaribuan17"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-300"
@@ -123,12 +123,12 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">GitHub</h4>
-                  <p className="text-foreground/70">github.com/refael</p>
+                  <p className="text-foreground/70">Refael-pangaribuan17</p>
                 </div>
               </a>
               
               <a 
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/refael-pangaribuan-257a06272/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-secondary/50 rounded-lg hover:bg-secondary transition-colors duration-300"
@@ -138,7 +138,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg font-medium">LinkedIn</h4>
-                  <p className="text-foreground/70">linkedin.com/in/refael</p>
+                  <p className="text-foreground/70">Refael Pangaribuan</p>
                 </div>
               </a>
             </div>

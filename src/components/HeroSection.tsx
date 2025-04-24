@@ -27,7 +27,7 @@ export function HeroSection() {
               Hi, I&apos;m <span className="text-primary">Refael</span> Pangaribuan
             </h1>
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-2xl leading-relaxed">
-              Tech enthusiast specializing in network and security systems with a passion for IoT, cloud, and virtualization.
+              Tech enthusiast specializing in network, cyber security, IoT, cloud, web development, machine vision and virtualization.
             </p>
             <div className="flex flex-wrap gap-6">
               <a 
@@ -41,19 +41,6 @@ export function HeroSection() {
               >
                 <ArrowDown className="w-5 h-5" />
                 Download CV
-              </a>
-              <a 
-                href="https://github.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className={cn(
-                  "flex items-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300",
-                  "bg-secondary/80 text-secondary-foreground hover:bg-secondary/70 transform hover:-translate-y-1 hover:shadow-lg",
-                  "backdrop-blur-sm border border-secondary-foreground/10"
-                )}
-              >
-                <Github className="w-5 h-5" />
-                View GitHub
               </a>
             </div>
           </div>

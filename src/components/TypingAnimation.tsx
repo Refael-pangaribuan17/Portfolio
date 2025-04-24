@@ -3,9 +3,10 @@ import React, { useEffect, useState, useRef } from "react";
 
 const roles = [
   "Network Engineer",
-  "Cyber Security Analyst",
-  "IoT Solutions Architect",
-  "Cloud Infrastructure Engineer",
+  "Machine Vision",
+  "Cyber Security",
+  "IoT engineer",
+  "Cloud Infrastructure",
   "Virtualization Specialist",
 ];
 
