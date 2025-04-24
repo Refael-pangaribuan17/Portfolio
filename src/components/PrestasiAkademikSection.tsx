@@ -11,14 +11,14 @@ const ACADEMIC = {
   degree: "D3 Teknologi Komputer",
   institution: "Institut Teknologi Del",
   year: "2025 (On Going)",
-  description: "Fokus pada pengembangan keterampilan praktis dalam bidang teknologi komputer, jaringan, dan pengembangan web.",
+  description: "Institut Teknologi Del berlokasi di desa Sitoluama, kecamatan Laguboti, kabupaten Toba Samosir (Tobasa), Sumatera Utara.",
   courses: [
     "Web Development",
-    "Database Managemen", 
-    "Computer Network",
+    "Sistem Komputasi Awan", 
+    "Keamanan Jaringan",
     "Embedded System",
-    "Internetworking",
-    "Network System Software"
+    "Internetworkin",
+    "Teknologi IOT"
   ],
   icon: <GraduationCap className="w-10 h-10 text-yellow-400" />,
 };
