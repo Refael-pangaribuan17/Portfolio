@@ -144,7 +144,12 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 font-poppins">
+    <section id="projects" className="py-20 font-poppins relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-40 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+        <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl opacity-30 animate-pulse delay-700"></div>
+      </div>
+
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-xl text-yellow-500 font-medium animate-fade-in">

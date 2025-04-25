@@ -1,4 +1,3 @@
-
 import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
 import { FileCode, Database, GitBranch, Server, Terminal, Globe } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";

@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Mail, Github, Linkedin, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -51,7 +50,6 @@ export function ContactSection() {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear the error for this field when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
@@ -63,13 +61,11 @@ export function ContactSection() {
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate API call
       setTimeout(() => {
         setIsSubmitting(false);
         setSubmitStatus('success');
         setFormData({ name: "", email: "", message: "" });
         
-        // Reset status after 5 seconds
         setTimeout(() => {
           setSubmitStatus('idle');
         }, 5000);
@@ -82,6 +78,8 @@ export function ContactSection() {
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute top-40 left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-primary/5 rounded-full blur-2xl opacity-30 animate-pulse"></div>
       </div>
       
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,7 +92,6 @@ export function ContactSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Contact Information */}
           <div className="w-full lg:w-1/3 animate-fade-in">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
             
@@ -144,7 +141,6 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Contact Form */}
           <div className="w-full lg:w-2/3 animate-fade-in">
             <div className="bg-secondary/30 backdrop-blur-md rounded-xl p-8">
               <h3 className="text-2xl font-semibold mb-6">Send Me a Message</h3>
