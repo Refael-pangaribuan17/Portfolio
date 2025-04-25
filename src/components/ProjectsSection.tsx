@@ -1,6 +1,7 @@
 
 import { Github, ExternalLink } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 type ProjectCardProps = {
   title: string;
@@ -16,61 +17,89 @@ function ProjectCard({ title, description, image, tags, githubLink, demoLink, in
   return (
     <div 
       className={cn(
-        "group bg-secondary/50 backdrop-blur-md rounded-xl overflow-hidden",
-        "transform transition-all duration-500 hover:translate-y-[-5px] hover:shadow-xl",
-        "animate-fade-in"
+        "relative group overflow-hidden rounded-xl h-[450px]",
+        "transform transition-all duration-500 hover:scale-105",
+        "bg-gradient-to-br from-black/80 to-black/40 backdrop-blur-lg",
+        "border border-yellow-500/20",
+        "animate-fade-in shadow-lg hover:shadow-yellow-500/20"
       )}
-      style={{ animationDelay: `${index * 150}ms` }}
+      style={{ animationDelay: `${index * 200}ms` }}
     >
-      {/* Project Image */}
-      <div className="relative h-56 overflow-hidden">
+      {/* Project Image with Overlay */}
+      <div className="absolute inset-0 z-0">
         <img 
           src={image} 
           alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover opacity-50"
         />
-        <div className="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 font-poppins">{title}</h3>
-        <p className="text-foreground/70 mb-4 font-inter">{description}</p>
+      <div className="relative z-10 h-full p-6 flex flex-col justify-end">
+        <div className="space-y-4">
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2">
+            {tags.map((tag, i) => (
+              <span 
+                key={i} 
+                className={cn(
+                  "text-xs px-3 py-1 rounded-full",
+                  "bg-yellow-500/10 text-yellow-500",
+                  "border border-yellow-500/20",
+                  "animate-fade-in",
+                  "transition-all duration-300 hover:bg-yellow-500/20"
+                )}
+                style={{ animationDelay: `${(index * 200) + (i * 100)}ms` }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
 
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, i) => (
-            <span 
-              key={i} 
-              className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+          <h3 className="text-2xl font-bold font-poppins text-white group-hover:text-yellow-500 transition-colors duration-300">
+            {title}
+          </h3>
+          
+          <p className="text-gray-300 font-inter line-clamp-3">
+            {description}
+          </p>
 
-        {/* Actions */}
-        <div className="flex gap-4">
-          <a 
-            href={githubLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-foreground/70 hover:text-primary transition-colors"
-          >
-            <Github size={16} />
-            <span>GitHub</span>
-          </a>
-          {demoLink && (
+          {/* Actions */}
+          <div className="flex gap-4 pt-4">
             <a 
-              href={demoLink}
+              href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-foreground/70 hover:text-primary transition-colors"
+              className={cn(
+                "flex items-center gap-2 px-4 py-2 rounded-full",
+                "bg-yellow-500/10 text-yellow-500",
+                "border border-yellow-500/20",
+                "transition-all duration-300 hover:bg-yellow-500/20",
+                "font-medium"
+              )}
             >
-              <ExternalLink size={16} />
-              <span>Live Demo</span>
+              <Github size={18} />
+              <span>GitHub</span>
             </a>
-          )}
+            {demoLink && (
+              <a 
+                href={demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "flex items-center gap-2 px-4 py-2 rounded-full",
+                  "bg-yellow-500/10 text-yellow-500",
+                  "border border-yellow-500/20",
+                  "transition-all duration-300 hover:bg-yellow-500/20",
+                  "font-medium"
+                )}
+              >
+                <ExternalLink size={18} />
+                <span>Live Demo</span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -112,38 +141,57 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 font-poppins relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-background to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-background to-transparent"></div>
-      </div>
-      
+    <section id="projects" className="py-20 font-poppins">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-xl text-primary font-medium mb-2">My Work</h2>
-          <h3 className="text-3xl md:text-4xl font-bold">Featured Projects</h3>
-          <p className="text-foreground/70 mt-4 max-w-2xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16 space-y-4">
+          <h2 className="text-xl text-yellow-500 font-medium animate-fade-in">
+            My Work
+          </h2>
+          <h3 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-500 to-yellow-200 bg-clip-text text-transparent animate-fade-in" style={{ animationDelay: '100ms' }}>
+            Featured Projects
+          </h3>
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
             A showcase of my technical projects in networking, security, IoT, cloud computing, and virtualization.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={index}
-              index={index}
-              {...project}
-            />
-          ))}
-        </div>
+        {/* Projects Carousel */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {projects.map((project, index) => (
+              <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                <ProjectCard 
+                  {...project}
+                  index={index}
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-center gap-4 mt-8">
+            <CarouselPrevious className="relative static bg-yellow-500/10 text-yellow-500 border-yellow-500/20 hover:bg-yellow-500/20" />
+            <CarouselNext className="relative static bg-yellow-500/10 text-yellow-500 border-yellow-500/20 hover:bg-yellow-500/20" />
+          </div>
+        </Carousel>
 
+        {/* View More Button */}
         <div className="text-center mt-12">
           <a 
             href="https://github.com" 
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 bg-primary text-primary-foreground hover:bg-primary/90 transform hover:-translate-y-1"
+            className={cn(
+              "inline-flex items-center gap-2 px-6 py-3 rounded-full",
+              "bg-yellow-500 text-black font-medium",
+              "transform transition-all duration-300",
+              "hover:bg-yellow-400 hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/20"
+            )}
           >
             <Github size={20} />
             View More on GitHub
