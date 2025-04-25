@@ -1,5 +1,4 @@
-
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Recycle, Gamepad, FireExtinguisher, Hospital, Hotel } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
@@ -25,7 +24,6 @@ function ProjectCard({ title, description, image, tags, githubLink, demoLink, in
       )}
       style={{ animationDelay: `${index * 200}ms` }}
     >
-      {/* Project Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src={image} 
@@ -35,10 +33,8 @@ function ProjectCard({ title, description, image, tags, githubLink, demoLink, in
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent"></div>
       </div>
 
-      {/* Content */}
       <div className="relative z-10 h-full p-6 flex flex-col justify-end">
         <div className="space-y-4">
-          {/* Tags */}
           <div className="flex flex-wrap gap-2">
             {tags.map((tag, i) => (
               <span 
@@ -65,7 +61,6 @@ function ProjectCard({ title, description, image, tags, githubLink, demoLink, in
             {description}
           </p>
 
-          {/* Actions */}
           <div className="flex gap-4 pt-4">
             <a 
               href={githubLink}
@@ -109,41 +104,48 @@ function ProjectCard({ title, description, image, tags, githubLink, demoLink, in
 export function ProjectsSection() {
   const projects = [
     {
-      title: "Network Security Monitor",
-      description: "A comprehensive monitoring system for detecting and alerting potential security breaches in network infrastructure.",
-      image: "https://images.unsplash.com/photo-1561883088-039e53143d73?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tags: ["Network Security", "Monitoring", "Python", "Flask"],
+      title: "Smart Waste Separator",
+      description: "Innovative SolidWorks design for an automated waste bin that efficiently separates metal and non-metal waste materials using advanced sensor technology and mechanical automation.",
+      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22",
+      tags: ["SolidWorks", "3D Design", "Automation", "Sustainability"],
       githubLink: "https://github.com",
       demoLink: "https://demo.com"
     },
     {
-      title: "IoT Smart Home System",
-      description: "An IoT-based smart home automation system with security features, remote monitoring, and energy optimization capabilities.",
-      image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tags: ["IoT", "Home Automation", "Raspberry Pi", "MQTT"],
+      title: "Interactive C Language Game",
+      description: "A console-based interactive game developed in C programming language, featuring dynamic gameplay mechanics, score tracking, and engaging user interactions.",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      tags: ["C Language", "Game Development", "Console Application", "Programming"],
       githubLink: "https://github.com"
     },
     {
-      title: "Cloud Resource Optimizer",
-      description: "A tool that analyzes cloud resource usage patterns and provides recommendations for cost and performance optimization.",
-      image: "https://images.unsplash.com/photo-1561441443-f1f164773f6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tags: ["Cloud Computing", "AWS", "Cost Optimization", "Python"],
+      title: "IoT Gas & Fire Detection System",
+      description: "Advanced IoT-based system for real-time detection of gas leaks and fire hazards, featuring instant alerts, mobile notifications, and emergency response integration.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
+      tags: ["IoT", "Sensors", "Safety", "Real-time Monitoring"],
       githubLink: "https://github.com",
       demoLink: "https://demo.com"
     },
     {
-      title: "Virtual Lab Environment",
-      description: "A comprehensive virtualized lab environment for learning and experimenting with various network configurations and security concepts.",
-      image: "https://images.unsplash.com/photo-1483478550801-ceba5fe50e8e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80",
-      tags: ["Virtualization", "Docker", "Kubernetes", "Networking"],
+      title: "Toba Health Facilities Portal",
+      description: "WordPress-based healthcare facilities directory for the Toba region, providing detailed information about medical services, locations, and availability.",
+      image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334",
+      tags: ["WordPress", "Healthcare", "Web Development", "Directory"],
       githubLink: "https://github.com"
+    },
+    {
+      title: "Hotel Booking System",
+      description: "Comprehensive Laravel-based hotel booking platform with real-time availability checking, secure payment integration, and automated booking management.",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+      tags: ["Laravel", "PHP", "Booking System", "Web Application"],
+      githubLink: "https://github.com",
+      demoLink: "https://demo.com"
     }
   ];
 
   return (
     <section id="projects" className="py-20 font-poppins">
       <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-xl text-yellow-500 font-medium animate-fade-in">
             My Work
@@ -156,7 +158,6 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects Carousel */}
         <Carousel
           opts={{
             align: "start",
@@ -180,7 +181,6 @@ export function ProjectsSection() {
           </div>
         </Carousel>
 
-        {/* View More Button */}
         <div className="text-center mt-12">
           <a 
             href="https://github.com" 
