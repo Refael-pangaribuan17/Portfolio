@@ -1,3 +1,4 @@
+
 import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
 import { FileCode, Database, GitBranch, Server, Terminal, Globe } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
@@ -15,6 +16,7 @@ const tools = [
   { name: "Java", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "PHP", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Python", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
+  { name: "JavaScript", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Bootstrap", icon: <Globe size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Laravel", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Nginx", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
