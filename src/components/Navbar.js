@@ -24,7 +24,7 @@ export function Navbar() {
   };
 
   // Close mobile menu when navigating
-  const handleNavClick = (sectionId: string) => {
+  const handleNavClick = (sectionId) => {
     setIsMobileMenuOpen(false);
     
     // Smooth scroll to section
