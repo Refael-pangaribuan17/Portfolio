@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { 
   Navbar,
@@ -5,9 +6,9 @@ import {
   AboutSection,
   ProjectsSection,
   ContactSection,
-  Footer 
+  Footer,
+  PrestasiAkademikSection
 } from "@/components";
-import { PrestasiAkademikSection } from "@/components/PrestasiAkademikSection";
 
 const Index = () => {
   // Set dark mode by default when component mounts
