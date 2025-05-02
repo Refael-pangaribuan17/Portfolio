@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { GraduationCap, Briefcase, Award, BadgeCheck, Book, Star, Trophy, Code } from "lucide-react";
 import { Card } from "./ui/card";
@@ -91,8 +92,11 @@ export function PrestasiAkademikSection() {
         </div>
       )}
 
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-yellow-400/10 via-background to-background" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-yellow-400/10 rounded-full blur-3xl" />
+      {/* Enhanced yellow background effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-yellow-400/20 via-yellow-300/10 to-background" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-2/3 bg-yellow-400/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-yellow-300/10 rounded-full blur-3xl" />
+      
       <div className="container mx-auto max-w-6xl px-4 relative">
         <div className="text-center mb-16 animate-fade-in">
           <Trophy className="w-16 h-16 text-yellow-400 mx-auto mb-6" />
@@ -103,7 +107,9 @@ export function PrestasiAkademikSection() {
             Academic journey and achievements in computer technology
           </p>
         </div>
-        <Card className="mb-16 p-8 bg-card/50 backdrop-blur border-yellow-400/20 animate-fade-in">
+        
+        {/* Academic section with enhanced yellow background */}
+        <Card className="mb-16 p-8 bg-gradient-to-b from-yellow-400/10 to-yellow-400/5 backdrop-blur border-yellow-400/20 animate-fade-in">
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <div className="flex items-start gap-4 mb-6">
@@ -125,7 +131,7 @@ export function PrestasiAkademikSection() {
                 {ACADEMIC.courses.map((course, idx) => (
                   <div 
                     key={idx}
-                    className="flex items-center gap-2 p-3 rounded-lg bg-background/50 border border-yellow-400/10"
+                    className="flex items-center gap-2 p-3 rounded-lg bg-yellow-400/5 border border-yellow-400/20 hover:bg-yellow-400/10 transition-colors"
                   >
                     <Star className="w-4 h-4 text-yellow-400" />
                     <span className="text-sm">{course}</span>
@@ -135,6 +141,8 @@ export function PrestasiAkademikSection() {
             </div>
           </div>
         </Card>
+        
+        {/* Internship section with yellow background */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Briefcase className="w-8 h-8 text-yellow-400" />
@@ -144,7 +152,7 @@ export function PrestasiAkademikSection() {
             {INTERNSHIPS.map((intern, idx) => (
               <Card 
                 key={idx}
-                className="p-6 bg-card/50 backdrop-blur hover:bg-card/80 transition-all duration-300 border-yellow-400/20 animate-fade-in"
+                className="p-6 bg-gradient-to-br from-yellow-400/10 via-yellow-400/5 to-transparent backdrop-blur hover:bg-yellow-400/10 transition-all duration-300 border-yellow-400/20 animate-fade-in"
                 style={{animationDelay: `${idx * 150}ms`}}
               >
                 <div className="flex items-start gap-4">
@@ -163,12 +171,14 @@ export function PrestasiAkademikSection() {
             ))}
           </div>
         </div>
+        
+        {/* Achievements section with yellow accent */}
         <div className="relative">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <Award className="w-8 h-8 text-yellow-400" />
             Achievements
           </h3>
-          <div className="absolute left-8 top-20 bottom-0 w-px bg-gradient-to-b from-yellow-400/50 to-transparent" />
+          <div className="absolute left-8 top-20 bottom-0 w-px bg-gradient-to-b from-yellow-400/80 to-transparent" />
           <div className="space-y-8">
             {ACHIEVEMENTS.map((ach, idx) => (
               <div 
@@ -176,10 +186,10 @@ export function PrestasiAkademikSection() {
                 className="relative pl-16 animate-fade-in"
                 style={{animationDelay: `${idx * 200}ms`}}
               >
-                <div className="absolute left-0 top-0 p-1 rounded-full bg-yellow-400/10 border border-yellow-400/20 flex items-center justify-center">
+                <div className="absolute left-0 top-0 p-1 rounded-full bg-yellow-400/20 border border-yellow-400/30 flex items-center justify-center">
                   {ach.icon}
                 </div>
-                <Card className="p-6 bg-card/50 backdrop-blur border-yellow-400/20">
+                <Card className="p-6 bg-gradient-to-br from-yellow-400/10 via-yellow-400/5 to-transparent backdrop-blur border-yellow-400/20">
                   <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-4">
                       {ach.images ? (
@@ -188,7 +198,7 @@ export function PrestasiAkademikSection() {
                             <img
                               key={imgIdx}
                               src={img}
-                              className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
+                              className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-200 transition-transform hover:scale-110"
                               alt="Achievement"
                               onClick={() => setModalImg(img)}
                             />
@@ -197,12 +207,12 @@ export function PrestasiAkademikSection() {
                       ) : ach.image ? (
                         <img
                           src={ach.image}
-                          className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-100 transition-transform hover:scale-110"
+                          className="w-16 h-16 object-cover rounded-md cursor-pointer border-2 border-yellow-200 transition-transform hover:scale-110"
                           alt="Achievement"
                           onClick={() => setModalImg(ach.image!)}
                         />
                       ) : (
-                        <div className="w-16 h-16 flex items-center justify-center bg-yellow-400/5 rounded-md" />
+                        <div className="w-16 h-16 flex items-center justify-center bg-yellow-400/10 rounded-md" />
                       )}
                       <div className="flex flex-col gap-2">
                         <span className="text-sm font-medium text-yellow-400">{ach.year}</span>
