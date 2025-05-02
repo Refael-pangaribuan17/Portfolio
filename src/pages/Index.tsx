@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { 
   Navbar,
@@ -6,9 +5,9 @@ import {
   AboutSection,
   ProjectsSection,
   ContactSection,
-  Footer,
-  PrestasiAkademikSection
+  Footer 
 } from "@/components";
+import { PrestasiAkademikSection } from "@/components/PrestasiAkademikSection";
 
 const Index = () => {
   // Set dark mode by default when component mounts
@@ -19,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navbar />
-      <main className="flex flex-col">
+      <main>
         <HeroSection />
         <AboutSection />
         <PrestasiAkademikSection />

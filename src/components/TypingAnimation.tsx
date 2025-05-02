@@ -10,7 +10,11 @@ const roles = [
   "Virtualization Specialist",
 ];
 
-export const TypingAnimation = ({ className }) => {
+type TypingAnimationProps = {
+  className?: string;
+};
+
+export const TypingAnimation: React.FC<TypingAnimationProps> = ({ className }) => {
   const [displayText, setDisplayText] = useState("");
   const [roleIdx, setRoleIdx] = useState(0);
   const [typing, setTyping] = useState(true); // true: typing, false: deleting
@@ -21,7 +25,7 @@ export const TypingAnimation = ({ className }) => {
   const DELETING_SPEED = 36;
   const DELAY_AFTER_TYPED = 1200;
   const DELAY_AFTER_DELETED = 400;
-  const typingTimeout = useRef();
+  const typingTimeout = useRef<number>();
 
   useEffect(() => {
     const currentRole = roles[roleIdx];
@@ -55,7 +59,7 @@ export const TypingAnimation = ({ className }) => {
   }, [typing, charIdx, roleIdx]);
 
   return (
-    <span className={(className || "") + " inline-flex items-center gap-2"}>
+    <span className={className + " inline-flex items-center gap-2"}>
       <span className="bg-gradient-to-r from-yellow-400 to-yellow-300 dark:from-yellow-400 dark:to-yellow-200 bg-clip-text text-transparent font-semibold transition-colors text-xl md:text-2xl">
         {displayText}
       </span>

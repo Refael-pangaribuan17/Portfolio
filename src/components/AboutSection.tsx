@@ -1,7 +1,12 @@
-
 import { Cloud, Network, Shield, Cpu, Code, Monitor } from "lucide-react";
 import { FileCode, Database, GitBranch, Server, Terminal, Globe } from "lucide-react";
 import { AspectRatio } from "./ui/aspect-ratio";
+
+type SkillCardProps = {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+};
 
 const tools = [
   { name: "C/C++", icon: <FileCode size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
@@ -10,7 +15,6 @@ const tools = [
   { name: "Java", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "PHP", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Python", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
-  { name: "JavaScript", icon: <Code size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Bootstrap", icon: <Globe size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Laravel", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
   { name: "Nginx", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
@@ -33,7 +37,7 @@ const tools = [
   { name: "XAMPP", icon: <Server size={20} color="#FFFFFF" />, color: "bg-[#FFD700] text-black" },
 ];
 
-function SkillCard({ icon, title, description }) {
+function SkillCard({ icon, title, description }: SkillCardProps) {
   return (
     <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-secondary/30 via-secondary/20 to-background/30 backdrop-blur-sm p-6 transition-all duration-500 hover:transform hover:scale-105">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
