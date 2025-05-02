@@ -6,9 +6,9 @@ import {
   AboutSection,
   ProjectsSection,
   ContactSection,
-  Footer 
+  Footer,
+  PrestasiAkademikSection
 } from "@/components";
-import { PrestasiAkademikSection } from "@/components/PrestasiAkademikSection";
 
 const Index = () => {
   // Set dark mode by default when component mounts
@@ -19,7 +19,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-inter">
       <Navbar />
-      <main>
+      <main className="flex flex-col">
         <HeroSection />
         <AboutSection />
         <PrestasiAkademikSection />
