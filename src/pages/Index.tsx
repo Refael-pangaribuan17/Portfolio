@@ -13,6 +13,8 @@ import {
 const Index = () => {
   // Set dark mode by default when component mounts
   useEffect(() => {
+    // Log to confirm this is executing
+    console.log("Setting dark mode by default");
     document.documentElement.classList.add("dark");
   }, []);
 

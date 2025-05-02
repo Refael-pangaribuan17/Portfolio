@@ -11,9 +11,13 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-  // Apply dark mode by default
+  // Apply dark mode by default and add debugging
   useEffect(() => {
+    console.log("App mounted - setting dark mode");
     document.documentElement.classList.add("dark");
+    
+    // Log the DOM structure to help debug rendering issues
+    console.log("Current DOM structure:", document.body.innerHTML);
   }, []);
 
   return (
